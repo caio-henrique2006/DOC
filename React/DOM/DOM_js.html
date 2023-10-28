@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+
+    <div id="titulo"></div>
+
+    <script>
+        const divTitulo = document.getElementById('titulo');
+        const tituloH1 = document.createElement('h1');
+        const textH1 = document.createTextNode('Bem vindo ao DOM');
+
+        divTitulo.append(tituloH1);
+        tituloH1.append(textH1);
+    </script>
+        
+</body>
+</html>

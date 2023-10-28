@@ -1,0 +1,47 @@
+// https://nextjs.org/learn-pages-router/foundations/about-nextjs/what-is-nextjs
+
+O que é React?
+- React é uma biblioteca front-end de javascript usada para criar 
+interativas interfaces de usuário na web
+
+O que é Next.js?
+- É um framework do React que auxilia na criação das aplicações web, 
+basicamente cuida da parte estrutural.
+
+O que é um framework?
+- Um arcabouço conceitual usado como base e modelo que auxilia o 
+desenvolvedor através de funcionalidades (não é um software executável)
+
+O que é routing? 
+- Como o usuário navega entre as suas aplicações
+
+O que é Data fetching?
+- Onde estão seus dados e como pegá-los
+
+O que é DOM?
+- Document Object Model é o documento dos objetos representados 
+construído pelo navegador ao ler o código HTML (Ele é manipulável)
+
+O que é programação imperativa e declarativa?
+- Na programação imperativa o desenvolvedor programa exatamente 
+o que deveria ser acrescentado ou atualizado na aplicação, já na 
+declarativa o desenvolvedor programa apenas o que quer mostrar na 
+página e a aplicação toma conta do resto (Um exemplo de programação 
+declarativa é o React).
+
+O que é o react-dom?
+- Permite o uso de metódos DOM com o React
+
+O que é JSX?
+- É uma extensão da sintaxe do Java que permite construir interface 
+com a sintaxe do HTML, ele precisa de um compilador próprio para 
+transformar ele de volta em javascript
+
+Em React o que são componentes?
+- São pedaços reutilizáveis de código que podem ser usados na interface, 
+eles são funções que retornam Elementos UI, reutilizar componentes dentro
+de outros componentes se chama "nesting";
+
+Em React o que são props?
+
+

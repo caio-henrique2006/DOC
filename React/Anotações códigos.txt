@@ -1,0 +1,15 @@
+// Javascript:
+
+const a = document.getElementById('id_do_elemento');  // Pega um elemento DOM do HTML
+const b = document.createElement('tag_HTML'); // Cria um elemento no DOM do HTML
+const c = document.createTextNode('texto_qualquer'); // Cria um texto_qualquer
+a.appendChild(c); // acrescenta um elemento a outro
+
+
+// React:
+ReactDOM.render(<h1> Bem vindo ao teste React </h1>, id_Elemento);
+ReactDOM.render(<component />, id_Elemento);
+
+function Nome_component() {
+    return <h1>texto</h1>;
+}
