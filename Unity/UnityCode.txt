@@ -1,0 +1,18 @@
+Debug.Log("Hey"); // Imprime valor no console
+
+// Input Entry:
+Input.GetKey("name of key"); // Observa ação dos periféricos, retorna True ou False
+Input.GetKey(KeyCode.D)
+
+// Acesso a um atributo de um component de um gameObject:
+GetComponent<componente>().atributoDoComponente
+GetComponent<componente>().atributoDoComponente = new Vector3(); 
+GetComponent<Rigidbody2D>().velocity = new Vector3(xValue, yValue, 0); // Movimenta o gameObject
+rigidBody.AddForce(xValue, yValue, zValue, ForceMode.Force);
+
+public Transform transform;
+transform = GetComponent<Transform>();
+this.
+
+float xMove = Input.GetAxisRaw("Horizontal");
+float zMove = Input.GetAxisRaw("Vertical");
