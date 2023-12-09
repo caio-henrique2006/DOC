@@ -13,3 +13,16 @@ ReactDOM.render(<component />, id_Elemento);
 function Nome_component() {
     return <h1>texto</h1>;
 }
+
+class becomes className
+                                    function Greetings() {
+                                    return (
+                                        <h1>Bem vindo</h1>
+                                    );
+                                    }
+
+                                    export default function Main() {
+                                    return (
+                                        <Greetings />
+                                    )
+                                    }
