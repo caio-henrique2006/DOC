@@ -1,0 +1,8 @@
+. O que é Code::Blocks?
+- Uma IDE ad hoc para trabalhar com C/C++ e outras linguages.
+
+. O que são compiladores?
+- São softwares especiais para converter código em linguagem de máquina.
+
+. O que é iostream?
+- Biblioteca C++ para imprimir e receber resposta do console.
