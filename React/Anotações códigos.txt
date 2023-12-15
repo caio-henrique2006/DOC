@@ -10,19 +10,23 @@ a.appendChild(c); // acrescenta um elemento a outro
 ReactDOM.render(<h1> Bem vindo ao teste React </h1>, id_Elemento);
 ReactDOM.render(<component />, id_Elemento);
 
-function Nome_component() {
+export default function Nome_component() {
     return <h1>texto</h1>;
 }
 
 class becomes className
-                                    function Greetings() {
-                                    return (
-                                        <h1>Bem vindo</h1>
-                                    );
-                                    }
 
-                                    export default function Main() {
-                                    return (
-                                        <Greetings />
-                                    )
-                                    }
+        function Greetings() {
+            return (
+                <h1>Bem vindo</h1>
+            );
+        }
+
+        export default function Main() {
+            return (
+                <Greetings />
+            )
+        }
+
+
+

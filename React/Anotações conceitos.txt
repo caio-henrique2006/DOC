@@ -42,8 +42,6 @@ Em React o que são componentes?
 eles são funções que retornam Elementos UI, reutilizar componentes dentro
 de outros componentes se chama "nesting";
 
-///////
-
 Em React o que são props?
 - É a forma pela qual componentes se comunicam entre si.
 
@@ -54,3 +52,7 @@ de um array de forma independente
 O que significa Ad-Hoc?
 - Significa que algo é destinado a uma finalidade específica, ou seja,
 é individual, independente, única.
+
+Como funciona uma árvore React?
+- OS componentes mais no topo da árvore são chamados de top-level components 
+e os mais abaixos sem child são chamados de leaf component

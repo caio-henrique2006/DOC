@@ -16,3 +16,4 @@ this.
 
 float xMove = Input.GetAxisRaw("Horizontal");
 float zMove = Input.GetAxisRaw("Vertical");
+Input.GetKeyDown(KeyCode.d)
