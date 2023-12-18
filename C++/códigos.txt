@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main() 
+{
+    cout << "Hello" << endl;
+    return 0;
+}
+
+#include <cmath>
+
+cout << "Digite um valor inteiro: " << endl;
+cin >> valor;
+
+cout << "O sucessor do valor inteiro digitado é " << valor << endl;
+
+unsigned int valoroso = 2; // int que armazena apenas números positivos

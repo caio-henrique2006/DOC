@@ -6,3 +6,9 @@
 
 . O que é iostream?
 - Biblioteca C++ para imprimir e receber resposta do console.
+
+. Diferença entre a linguagem C e C++?
+- Existem inúmeras diferenças relacionadas a sintaxe e as bibliotecas
+usadas pelas duas linguagens. Mas a diferença principal é que a linguagem
+C é procedural, enquanto que a linguagem C++ é Multi-paradigma (procedural
+e orientada a objetos).
