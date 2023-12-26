@@ -7,6 +7,9 @@ a.appendChild(c); // acrescenta um elemento a outro
 
 
 // React:
+
+'use client';
+
 ReactDOM.render(<h1> Bem vindo ao teste React </h1>, id_Elemento);
 ReactDOM.render(<component />, id_Elemento);
 
@@ -29,4 +32,27 @@ class becomes className
         }
 
 
+<div>
+    <Header title="Develop. Preview. Ship." />
+    <ul>
+    {names.map((name) => (
+        <li key={name}>{name}</li>
+    ))}
+    </ul>
+</div>
 
+function HomePage() {
+  // ...
+  const [likes, setLikes] = React.useState(0);
+ 
+  function handleClick() {
+    setLikes(likes + 1);
+  }
+ 
+  return (
+    <div>
+      {/* ... */}
+      <button onClick={handleClick}>Likes ({likes})</button>
+    </div>
+  );
+}

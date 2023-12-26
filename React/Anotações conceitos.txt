@@ -54,5 +54,30 @@ O que significa Ad-Hoc?
 é individual, independente, única.
 
 Como funciona uma árvore React?
-- OS componentes mais no topo da árvore são chamados de top-level components 
+- Os componentes mais no topo da árvore são chamados de top-level components 
 e os mais abaixos sem child são chamados de leaf component
+
+-- 
+
+O que é state em React?
+- Qualquer UI dentro do seu código que pode mudar com o tempo.
+
+O que são hooks em React? 
+- Hooks são um conjunto de funções que permitem acrescentar lógica a UI.
+
+O que é network boundary?
+- É onde o código passa de ambiente (servidor para cliente e vice-versa).
+É importante definir o que vai ser executado pelo servidor e o que será
+pelo cliente de formar a aumentar a performace da página.
+
+O que é tailwind css? 
+- É uma estrutura do css que permite estilizar o código direto na linha
+ao invés de usar o className. O diferencial dessa estrutura é que não
+é necessário manter arquivos de css no código, já que esses estão juntos
+do código fonte. Uma alternativa é usar css modules que criam classNames
+específicos para cada componente impedindo o conflito de estilos de classes.
+
+O que é clsx?
+- É uma biblioteca css para renderizar estilização condicionalmente.
+
+
