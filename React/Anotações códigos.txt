@@ -56,3 +56,14 @@ function HomePage() {
     </div>
   );
 }
+
+{
+  data.map((item) => (
+    <div key={item.key}>
+      <Card 
+        icon={item.icon}
+        name={item.name}
+        number={item.number}
+      />
+    </div>
+))}

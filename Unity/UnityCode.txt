@@ -17,3 +17,71 @@ this.
 float xMove = Input.GetAxisRaw("Horizontal");
 float zMove = Input.GetAxisRaw("Vertical");
 Input.GetKeyDown(KeyCode.d)
+
+if (collision.gameObject.tag == "wall") {
+            Debug.Log("Game Over");
+            GameOver.SetActive(true);
+        }
+        if (collision.gameObject.tag == "ground") {
+            isGrounded = true;
+        }
+
+-----------------------------------------------------------------------------
+Jogo das pontes: 
+
+public class TerrainManager : MonoBehaviour
+{
+    public GameObject[] bridgePrefabs; // Lista de todos as Pontes
+
+    enum enType // Tipos de Pontes
+    {
+        Straight,
+        Right,
+        Left,
+        Center,
+        Jump,
+    }
+
+    class Bridges
+    {
+        public GameObject bridgePrefab;
+        public enType bridgeType;
+
+        public Bridges (GameObject bridgePrefab, enType bridgeType) 
+        {
+            this.bridgePrefab = bridgePrefab;
+            this.bridgeType = bridgeType;
+        }
+    };
+    Bridges bridge;
+    Vector3 spawnCoord = new Vector3(0, 0, 0);
+    int segsOnScreen = 10;
+
+    void Start()
+    {
+        bridge = new Bridges(bridgePrefabs[0], enType.Straight);
+
+        for (int i = 0; i < segsOnScreen; i++) {
+            SpawnBridges();
+        }
+    }
+
+    void Update()
+    {
+        
+    }
+
+    void SpawnBridges() 
+    {
+        GameObject prefabToInstantiate = bridge.bridgePrefab;
+        Quaternion prefabRotation = Quaternion.identity;
+
+        if (prefabToInstantiate != null) 
+        {
+            Instantiate(prefabToInstantiate, spawnCoord, prefabRotation);
+        }
+
+        spawnCoord.z += 6.0f;
+    }
+}
+------------------------------------------------------------------------------------

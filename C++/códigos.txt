@@ -16,3 +16,7 @@ cin >> valor;
 cout << "O sucessor do valor inteiro digitado é " << valor << endl;
 
 unsigned int valoroso = 2; // int que armazena apenas números positivos
+
+<cmath>
+abd() // valor absoluto
+<ctime>
