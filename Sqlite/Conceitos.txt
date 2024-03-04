@@ -1,0 +1,16 @@
+Sqlite não roda em server, o que quer
+dizer que ele não precisa fazer request
+em TCP/IP.
+
+Sqlite é integrada com a aplicação que
+está usando, então ela interage
+diretamente com o banco de dados.
+
+Sqlite é self-Contained, o que significa
+que ela depende minimamente do OS e de 
+bibliotecas externas.
+
+Sqlite também é Zero-configuration.
+
+Sqlite usa dinamic types, ou seja, não
+é por tipagem.

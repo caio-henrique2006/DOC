@@ -1,0 +1,7 @@
+sqlite3
+
+.open c:\sqlite\db\chinook.db
+
+sqlite3 c:\sqlite\db\chinook.db
+
+ATTACH DATABASE "c:\sqlite\db\chinook.db" AS chinook;
