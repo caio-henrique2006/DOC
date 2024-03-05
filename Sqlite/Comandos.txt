@@ -4,4 +4,31 @@ sqlite3
 
 sqlite3 c:\sqlite\db\chinook.db
 
+.tables
+
 ATTACH DATABASE "c:\sqlite\db\chinook.db" AS chinook;
+
+SELECT
+
+SELECT
+	name,
+	milliseconds, 
+	albumid
+FROM
+	tracks
+ORDER BY
+	albumid ASC;
+
+SELECT
+	column_list
+FROM
+	table
+WHERE
+	search_condition;
+
+CREATE TABLE [IF NOT EXISTS] [schema_name].table_name (
+	column_1 data_type PRIMARY KEY,
+   	column_2 data_type NOT NULL,
+	column_3 data_type DEFAULT 0,
+	table_constraints
+) [WITHOUT ROWID];
