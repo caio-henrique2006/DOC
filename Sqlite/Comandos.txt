@@ -1,34 +1,41 @@
+// Comandos básicos:
+
 sqlite3
 
-.open c:\sqlite\db\chinook.db
+.open {c:\sqlite\db\chinook.db}
 
-sqlite3 c:\sqlite\db\chinook.db
+sqlite3 {c:\sqlite\db\chinook.db}
 
 .tables
 
-ATTACH DATABASE "c:\sqlite\db\chinook.db" AS chinook;
+.schema {tableName}
 
-SELECT
+// SELECT statement:
+Solicita dados de uma tabela
 
-SELECT
-	name,
-	milliseconds, 
-	albumid
+SELECT 1 + 1
+
+SELECT 				// Solicitando dados da {column} da {table}
+	{column1},
+	{column2},
+	{column3}
+FROM 
+	{table};
+
+SELECT * FROM {table} 	// Solicitada todos os dados da {table}
+
+// ORDER BY statement:
+Organiza os dados solicitados
+
+SELECT		
+   {column1},
+   {column2}
 FROM
-	tracks
+   {table}
 ORDER BY
-	albumid ASC;
+    column_1 ASC,	// ASC = Ascendente
+    column_2 DESC;	// DESC = Decrescente
 
-SELECT
-	column_list
-FROM
-	table
-WHERE
-	search_condition;
+// DISTINCT (clausula opcional do SELECT):
+Remove linhas duplicadas quando dados são requisitados por SELECT
 
-CREATE TABLE [IF NOT EXISTS] [schema_name].table_name (
-	column_1 data_type PRIMARY KEY,
-   	column_2 data_type NOT NULL,
-	column_3 data_type DEFAULT 0,
-	table_constraints
-) [WITHOUT ROWID];
