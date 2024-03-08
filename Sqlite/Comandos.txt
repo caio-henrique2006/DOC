@@ -39,3 +39,34 @@ ORDER BY
 // DISTINCT (clausula opcional do SELECT):
 Remove linhas duplicadas quando dados são requisitados por SELECT
 
+// WHERE (clausula opcional do SELECT):
+
+SELECT
+	column_list
+FROM
+	table
+WHERE
+	search_condition;
+
+SELECT
+   name,
+   milliseconds,
+   bytes,
+   albumid
+FROM
+   tracks
+WHERE
+   albumid = 1;
+
+// LIMIT:
+Limita a quantidade de linhas retornadas pelo SELECT,
+é sempre bom usar em relação com a clausula ORDER BY
+
+SELECT
+	column_list
+FROM
+	table
+LIMIT inteiro;      // Número de linhas pra retornar
+
+
+
