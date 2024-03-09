@@ -1,0 +1,4 @@
+. O que é um arquivo CSV?
+- É um acrônimo para Comma-Separated-Values, é simplesmente um arquivo
+de texto que pode ser trasformado em uma tabela e pode ser exportado
+para várias aplicações como Excel.

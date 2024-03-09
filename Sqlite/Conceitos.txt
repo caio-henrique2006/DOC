@@ -3,7 +3,33 @@
 está usando, então ela interage diretamente com o banco de dados. Sqlite é self-Contained, o que significa que ela depende 
 minimamente do OS e de bibliotecas externas.
 
+. O que quer dizer que o Sqlite é (ACID) e transactional?
+- Quer dizer que ele tem uma alta confiabilidade mesmo quando o processo
+falha, ou a falta de energia durante o processo. Atomic, Consistent,
+Isolation e Durable.
+
+. O que é storage classes em Sqlite?
+- São os 5 tipos "primitivos" de tipos de dados: NULL, INTEGER, REAL,
+TEXT, BLOB;
+
+. O que é Manifest DataType e Type Affinity?
+- Manifest Datatype descreve que o tipo de um dado não é propriedade da
+coluna em que esse dado se encontra, mas é propriedade do próprio dado,
+dessa forma as colunas em Sqlite podem armazenar qualquer tipo de dado.
+Type Affinity é uma recomendação de que que dado pode ser armazenado em
+uma coluna, não é obrigatório, mas melhora a eficiência do programa.
+
+. O que é uma PRIMARY KEY e uma FOREIGN KEY em Sqlite?
+- É um valor que identifica todas as linhas em uma tabela, existe uma
+colu"na PRIMARY KEY em uma tabela. Já uma FOREIGN KEY, conecta uma 
+PRIMARY KEY de uma tabela a outra, criando conexões.
+
+
+
+
 // Mais: 
+Sqlite usa dinamic typing
+
 Sqlite também é Zero-configuration.
 
 Sqlite usa dinamic types, ou seja, não

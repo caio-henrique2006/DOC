@@ -10,6 +10,22 @@ sqlite3 {c:\sqlite\db\chinook.db}
 
 .schema {tableName}
 
+// CREATE TABLE:
+
+CREATE TABLE contact_groups(
+   contact_id INTEGER,
+   group_id INTEGER,
+   PRIMARY KEY (contact_id, group_id),
+   FOREIGN KEY (contact_id) 
+      REFERENCES contacts (contact_id) 
+         ON DELETE CASCADE 
+         ON UPDATE NO ACTION,
+   FOREIGN KEY (group_id) 
+      REFERENCES groups (group_id) 
+         ON DELETE CASCADE 
+         ON UPDATE NO ACTION
+);
+
 // SELECT statement:
 Solicita dados de uma tabela
 
@@ -68,5 +84,83 @@ FROM
 	table
 LIMIT inteiro;      // Número de linhas pra retornar
 
+// Join
+Juntar dados de duas tabelas diferentes
 
+SELECT 
+    Title,
+    Name
+FROM 
+    albums
+INNER JOIN artists 
+    ON artists.ArtistId = albums.ArtistId;
 
+// Group By
+Agrupa dados de uma tabela
+
+SELECT
+	albumid,
+	COUNT(trackid)
+FROM
+	tracks
+GROUP BY
+	albumid;
+HAVING 
+   condition;
+
+// UNION
+Junta duas tabelas em uma
+
+SELECT FirstName, LastName, 'Employee' AS Type
+FROM employees
+UNION
+SELECT FirstName, LastName, 'Customer'
+FROM customers;
+
+// CASE
+Funciona como uma expressão If-Then-Else
+
+SELECT customerid,
+       firstname,
+       lastname,
+       CASE country 
+           WHEN 'USA' 
+               THEN 'Domestic' 
+           ELSE 'Foreign' 
+       END
+FROM 
+    customers
+ORDER BY 
+    LastName,
+    FirstName;
+
+// INSERT
+Self explanatory
+
+INSERT INTO artists (name)
+VALUES
+	("Buddy Rich"),
+	("Candido"),
+	("Charlie Byrd");
+
+// UPDATE
+
+UPDATE table
+SET column_1 = new_value_1,
+    column_2 = new_value_2
+WHERE
+    search_condition 
+ORDER column_or_expression
+LIMIT row_count OFFSET offset;
+
+// DELETE
+
+DELETE FROM table
+WHERE search_condition
+ORDER BY criteria
+LIMIT row_count OFFSET offset;
+
+// REPLACE 
+
+REPLACE INTO table(column_list)
+VALUES(value_list);
