@@ -2,3 +2,9 @@
 - É um acrônimo para Comma-Separated-Values, é simplesmente um arquivo
 de texto que pode ser trasformado em uma tabela e pode ser exportado
 para várias aplicações como Excel.
+
+. O que é Programação Assíncrona?
+- É uma técnica de programação que permite que enquanto uma tarefa longa seja realizada, outra possa ser executada ao mesmo tempo. Serve
+muito em casos de requisição para servidores ou outros.
+
+// Event Handlers são uma forma de programação assíncrona.
