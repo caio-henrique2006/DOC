@@ -1,0 +1,4 @@
+. O que são promisses?
+- São a fundação da programação assíncrona em javascript, funciona
+basicamente retornado um objeto "promisse" que fica vazio até a
+informação chegar e um handler executar.
