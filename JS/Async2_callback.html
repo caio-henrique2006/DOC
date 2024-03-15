@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="login(showData())"> Click to login </button>
+    <button onclick="more()"> Click to add </button>
+
+    <script>
+        function login () {
+            fetchLogin(showData);
+        }
+
+        function fetchLogin (callback) {
+            setTimeout(() => {
+                console.log("We have data");
+                callback("Data");
+            }, 3000);
+        }
+
+        function showData(data) {
+            console.log(data);
+        }
+
+        function more() {
+            console.log(2);
+        }
+    </script>
+</body>
+</html>

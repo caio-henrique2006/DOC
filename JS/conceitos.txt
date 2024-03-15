@@ -2,3 +2,10 @@
 - São a fundação da programação assíncrona em javascript, funciona
 basicamente retornado um objeto "promisse" que fica vazio até a
 informação chegar e um handler executar.
+
+. O que é AJAX?
+- AJAX é a junção das palavras Asynchronous JavaScript XML, ela é um conjunto de técnicas para criar solicitações assíncronas a um servidor
+para deixar as páginas web mais interativas com o usuário.
+
+. O que é callback?
+- É uma forma de chamar uma função de forma assíncrona quando o dado que foi buscado retornar.
