@@ -9,3 +9,6 @@ para deixar as páginas web mais interativas com o usuário.
 
 . O que é callback?
 - É uma forma de chamar uma função de forma assíncrona quando o dado que foi buscado retornar.
+
+. O que é V8?
+- V8 é o nome da engine que alimenta o Google chrome.
