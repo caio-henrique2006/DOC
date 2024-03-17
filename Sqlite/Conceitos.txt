@@ -24,7 +24,9 @@ uma coluna, não é obrigatório, mas melhora a eficiência do programa.
 colu"na PRIMARY KEY em uma tabela. Já uma FOREIGN KEY, conecta uma 
 PRIMARY KEY de uma tabela a outra, criando conexões.
 
-
+. Diferença entre parallelize() e serialize()?
+- parallelize executa os comandos sql em paralelo, enquanto que o
+serialize executa um de cada vez.
 
 
 // Mais: 

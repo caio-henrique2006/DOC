@@ -164,3 +164,38 @@ LIMIT row_count OFFSET offset;
 
 REPLACE INTO table(column_list)
 VALUES(value_list);
+
+// let sql = `
+// SELECT DISTINCT name FROM playlists 
+// ORDER BY name
+// `
+const sqlite3 = require('sqlite3').verbose();
+
+let db = new sqlite3.Database('./data/chinook.db', sqlite3.OPEN_READONLY, (err) => {
+    if (err) {
+        return console.error(err.message);
+    }
+
+    console.log("Connected to the sqlite data");
+});
+
+// let sql = `
+// SELECT DISTINCT name FROM playlists 
+// ORDER BY name
+// `
+
+// db.run() CREATE INSERT
+// db.all() QUERY
+// db.get() QUERY
+// db.each() QUERY
+
+// if (err) {
+//     return console.log(err.message);
+//   }
+
+db.close((err) => {
+    if (err) {
+        return console.error(err.message);
+    }
+    console.log("Close database connection");
+});
