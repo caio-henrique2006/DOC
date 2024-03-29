@@ -1,0 +1,10 @@
+. O Next é um framework do React
+. O Next ele executa tanto no cliente como no servidor, a vantagem 
+disso é que a sua renderização no servidor é que fica mais eficiente
+o primeiro carregamento do app.
+. O React ele é uma biblioteca com a função de conglomerar várias
+funcionalidades através de plugins.
+
+// Sobre rotas:
+. As rotas em Next elas são feitas com arquivos. Para declarar uma nova
+rota é necessário criar uma pasta dentro de app com o nome da rota 
