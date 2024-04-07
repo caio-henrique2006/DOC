@@ -8,3 +8,9 @@ funcionalidades através de plugins.
 // Sobre rotas:
 . As rotas em Next elas são feitas com arquivos. Para declarar uma nova
 rota é necessário criar uma pasta dentro de app com o nome da rota 
+
+// Para o Anki:
+
+- Como funcionam as rotas em Next?
+. As rotas em Next elas são feitas com arquivos. Para declarar uma nova
+rota é necessário criar uma pasta dentro de app com o nome da rota.
