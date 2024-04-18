@@ -1,26 +1,45 @@
-function calcularGanho(value: number) {
-  const p = document.querySelector("p");
-  if (p) {
-    p.innerText = `ganho total: ${value + 100 - value * 0.2}`;
-  }
+interface Empresa {
+  nome: string;
+  fundacao: number;
+  pais: string;
 }
 
-function totalMudou() {
-  if (input) {
-    localStorage.setItem("total", input.value);
-    calcularGanho(Number(input.value));
-  }
+interface Produto {
+  nome: string;
+  preco: number;
+  descricao: string;
+  garantia: string;
+  seguroAcidente: boolean;
+  empresaFabricante: Empresa;
+  empresaMontadora: Empresa;
 }
 
-const input = document.querySelector("input");
-
-const total = localStorage.getItem("total");
-
-if (input && total) {
-  input.value = total;
-  calcularGanho(Number(input.value));
+async function fetchProduct() {
+  const response = await fetch("https://api.origamid.dev/json/notebook.json");
+  const data = await response.json();
+  showProduct(data);
 }
 
-if (input) {
-  input.addEventListener("keyup", totalMudou);
+fetchProduct();
+
+function showProduct(data: Produto) {
+  document.body.innerHTML = `
+    <div>
+      <h2>${data.nome}</h2>
+        <p>${data.preco}</p>
+        <p>${data.garantia}</p>
+        <p>${data.descricao}</p>
+        <p>${
+          data.seguroAcidente ? "Com seguro acidente" : "Sem seguro acidente"
+        }</p>
+      <h3>Empresa Fabricante: </h3>
+        <p>${data.empresaFabricante.nome}</p>
+        <p>${data.empresaFabricante.fundacao}</p>
+        <p>${data.empresaFabricante.pais}</p>
+      <h3>Empresa Montadora: </h3>
+        <p>${data.empresaMontadora.nome}</p>
+        <p>${data.empresaMontadora.fundacao}</p>
+        <p>${data.empresaMontadora.pais}</p>
+    </div>
+  `;
 }
