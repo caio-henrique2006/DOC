@@ -1,45 +1,19 @@
-interface Empresa {
-  nome: string;
-  fundacao: number;
-  pais: string;
+const button = document.querySelector("button");
+
+function handleClick(event: MouseEvent) {
+  const menu = document.getElementById("nav");
+  const button = event.currentTarget;
+  if (button instanceof HTMLElement && menu) {
+    if (menu.hasAttribute("class")) {
+      menu.removeAttribute("class");
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", "Abrir menu");
+    } else {
+      menu.setAttribute("class", "active");
+      button.setAttribute("aria-expanded", "true");
+      button.setAttribute("aria-label", "Fechar Menu");
+    }
+  }
 }
 
-interface Produto {
-  nome: string;
-  preco: number;
-  descricao: string;
-  garantia: string;
-  seguroAcidente: boolean;
-  empresaFabricante: Empresa;
-  empresaMontadora: Empresa;
-}
-
-async function fetchProduct() {
-  const response = await fetch("https://api.origamid.dev/json/notebook.json");
-  const data = await response.json();
-  showProduct(data);
-}
-
-fetchProduct();
-
-function showProduct(data: Produto) {
-  document.body.innerHTML = `
-    <div>
-      <h2>${data.nome}</h2>
-        <p>${data.preco}</p>
-        <p>${data.garantia}</p>
-        <p>${data.descricao}</p>
-        <p>${
-          data.seguroAcidente ? "Com seguro acidente" : "Sem seguro acidente"
-        }</p>
-      <h3>Empresa Fabricante: </h3>
-        <p>${data.empresaFabricante.nome}</p>
-        <p>${data.empresaFabricante.fundacao}</p>
-        <p>${data.empresaFabricante.pais}</p>
-      <h3>Empresa Montadora: </h3>
-        <p>${data.empresaMontadora.nome}</p>
-        <p>${data.empresaMontadora.fundacao}</p>
-        <p>${data.empresaMontadora.pais}</p>
-    </div>
-  `;
-}
+button.addEventListener("click", handleClick);
