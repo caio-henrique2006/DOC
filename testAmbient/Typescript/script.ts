@@ -16,4 +16,4 @@ function handleClick(event: MouseEvent) {
   }
 }
 
-button.addEventListener("click", handleClick);
+button?.addEventListener("click", handleClick);

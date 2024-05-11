@@ -1,3 +1,12 @@
+# TypeScript
+
+## Conceitos
+
+### Utilidades do typescript
+
+- Permite que o editor localize erros runtime antes mesmo da execução do código.
+- Typescript já instalado por padrão no VS code.
+
 ## Comandos
 
 ```tsx
@@ -15,18 +24,13 @@ tsc -w // Compila a todo novo salvamento TS em JS
 ## tsconfig
 
 ```tsx
-{
-	"compilerOptions": {
-		"target": "ESNext", // Define a versão do JS que será usada
-		"strict": true // Define o modo strict no JS e é mais restrito no TS
-	}
-}
+    {
+        "compilerOptions": {
+            "target": "ESNext", // Define a versão do JS que será usada
+            "strict": true // Define o modo strict no JS e é mais restrito no TS
+        }
+    }
 ```
-
-## Utilidades do typescript
-
-- Permite que o editor localize erros runtime antes mesmo da execução do código.
-- Typescript já instalado por padrão no VS code.
 
 ## @ts-check
 
@@ -58,23 +62,26 @@ const pessoa: {
 };
 
 // Parâmetros da função:
-function soma (a: number, b: number): number {
-	return a + b
+function soma(a: number, b: number): number {
+  return a + b;
 }
 
-function object (objeto: { nome: string; idade: number; }) {
-	return objeto
-} 
+function object(objeto: { nome: string; idade: number }) {
+  return objeto;
+}
 
 // Array:
 
-const numeros = [1, 2, 3, 4, 5, 6] 
-const numerosTextos = [1, "a", 2, "b"]
-const arrayArray = [["a", 1], ["b", 2]]
+const numeros = [1, 2, 3, 4, 5, 6];
+const numerosTextos = [1, "a", 2, "b"];
+const arrayArray = [
+  ["a", 1],
+  ["b", 2],
+];
 
-function numeros(data: number[]) // Alt: Array<number>
-function numerosTextos(data: (number | string)[]) // Alt: Array<number | string>
-function arrayArray(data: (number | string)[][]) 
+function numeros(data: number[]); // Alt: Array<number>
+function numerosTextos(data: (number | string)[]); // Alt: Array<number | string>
+function arrayArray(data: (number | string)[][]);
 ```
 
 Caso a informação do tipo da váriavel já esteja explícito o TS faz a inferência, ou seja, não é necessário definir o tipo.
@@ -85,14 +92,14 @@ Caso a informação do tipo da váriavel já esteja explícito o TS faz a infer�
 const button = document.querySelector("button");
 
 // Optional chaining
-button?.click() // Checa se button é null
+button?.click(); // Checa se button é null
 ```
 
 ## Type guard
 
 ```tsx
 if (typeof value === "number") {
-	// code
+  // code
 }
 ```
 
@@ -106,12 +113,13 @@ type NumberOrString = string | number;
 const valor: NumberOrString = 20;
 
 // Object:
-interface Pessoa { // pode ser type tmb
-	nome: string;
-	idade: number;
-	cpf: string;
-	usaOculos?: boolean;
-};
+interface Pessoa {
+  // pode ser type tmb
+  nome: string;
+  idade: number;
+  cpf: string;
+  usaOculos?: boolean;
+}
 
 // Personalizado:
 type Categoria = "profissional" | "estudante" | "professor";
@@ -121,21 +129,21 @@ type Categoria = "profissional" | "estudante" | "professor";
 
 ```tsx
 class Produto {
-	nome: string;
-	constructor(nome: string) {
-		this.nome = nome;
-	}
+  nome: string;
+  constructor(nome: string) {
+    this.nome = nome;
+  }
 }
 
 class Livro extends Produto {
-	autor: string;
-	constructor(nome: string, autor: string) {
-		super(nome); // Atributos criados no cronstrutor do extend
-		this.autor = autor
-	}
+  autor: string;
+  constructor(nome: string, autor: string) {
+    super(nome); // Atributos criados no cronstrutor do extend
+    this.autor = autor;
+  }
 }
 
-const fruta = new Produto('Banana');
+const fruta = new Produto("Banana");
 ```
 
 ## Instanceof
@@ -144,22 +152,21 @@ Observa se um objeto é uma instância de uma classe específica.
 
 ```tsx
 class Livro {
-	nome: string;
-	autor: string;
-	constructor(nome: string, autor: string) {
-		this.nome = nome;
-		this.autor = autor;
-	}
+  nome: string;
+  autor: string;
+  constructor(nome: string, autor: string) {
+    this.nome = nome;
+    this.autor = autor;
+  }
 }
 
 objeto = new Livro("Atomic Habits", "James Clear");
 
 if (objeto instanceof Livro) {
-	console.log("objeto é instância de Livro");
+  console.log("objeto é instância de Livro");
 }
 
 // objeto instaceof HTMLElement
-
 ```
 
 ## This ou event.currentTarget
