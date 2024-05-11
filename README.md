@@ -1,5 +1,5 @@
 # Minhas documentações pessoais
 
-## [Conceitos de programação](DodMD/Conceitos.md)
+## [Conceitos de programação](DocMD/Conceitos.md)
 
 ## [Typescript](DocMD/typescript.md)
