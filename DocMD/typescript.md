@@ -181,3 +181,91 @@ function (this: HTMLButtonElement, event: MouseEvent) {
 
 button?.addEventListener("click", handleClick);
 ```
+
+## Tipos genéricos
+
+Utilizado para declarar o tipo de parâmetro da função.
+
+```tsx
+function retorno<Tipo>(param: Tipo): Tipo {
+  return param;
+}
+
+retorno(200);
+retorno("Ola");
+retorno(true);
+
+function retLista<T>(param: T[]): T {
+  return param[0];
+}
+
+retLista([0, 1, 2, 3]);
+```
+
+Utilizando extends
+
+```tsx
+function element<T extends HTMLElement>(param: T): string {
+  return T.innerText;
+}
+
+const p = document.getElementById("texto");
+element(p);
+```
+
+Métodos nativos
+
+```tsx
+const link = document.getElementById<HTMLAnchorElement>(".link");
+```
+
+## Optional arg
+
+Formas de gerar argumentos|parâmetros opcionais.
+
+```tsx
+function soma(a, b, c = 0);
+
+function soma(a: number, b: number, c?: number); // c = number | undefined
+
+function soma(a: number, b: number, c: number = 0); // c = number
+```
+
+## Never
+
+Palavra chave para definir que uma função vai retornar um erro, abortando a aplicação.
+
+```tsx
+function erro(mensagem: string): never {
+  throw new Error(mensagem);
+}
+
+erro("Deu erro");
+console.log("Continua?");
+```
+
+## Overload
+
+```tsx
+Utilizado para definir possibilidades: entrada -> retorno
+
+function retorno<T>(param: boolean): boolean;
+function retorno<T>(param: string): number;
+function retorno<T>(param: number): string;
+function retorno<T>(param: T) {
+  if (typeof param === "string") {
+    return Number(param);
+  } else if (typeof param === "number") {
+    return String(param);
+  } else {
+    return !param;
+  }
+}
+
+retorno("200");
+console.log(typeof NaN);
+retorno(200);
+retorno(20.2);
+retorno(true);
+
+```
