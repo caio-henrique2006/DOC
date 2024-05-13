@@ -1,17 +1,10 @@
 "use strict";
-function retorno(param) {
-    if (typeof param === "string") {
-        return Number(param);
+function normaliza(param) {
+    if (isString(param)) {
+        return param.toLowerCase;
     }
-    else if (typeof param === "number") {
-        return String(param);
-    }
-    else {
-        return !param;
-    }
+    return null;
 }
-retorno("200");
-console.log(typeof NaN);
-retorno(200);
-retorno(20.2);
-retorno(true);
+function isString(value) {
+    return typeof value === "string";
+}

@@ -7,6 +7,10 @@
 - Permite que o editor localize erros runtime antes mesmo da execução do código.
 - Typescript já instalado por padrão no VS code.
 
+### Type guard
+
+- Conceito de proteção do tipo, permitindo que um bloco de código seja executado com certeza do tipo de dado de sua variável (type narrowing). Isso também permite o controle de fluxo do programa.
+
 ## Comandos
 
 ```tsx
@@ -246,9 +250,9 @@ console.log("Continua?");
 
 ## Overload
 
-```tsx
 Utilizado para definir possibilidades: entrada -> retorno
 
+```tsx
 function retorno<T>(param: boolean): boolean;
 function retorno<T>(param: string): number;
 function retorno<T>(param: number): string;
@@ -267,5 +271,84 @@ console.log(typeof NaN);
 retorno(200);
 retorno(20.2);
 retorno(true);
+```
 
+## In
+
+Checa se existe ou não um valor dentro de um objeto.
+
+```tsx
+const obj = {
+  nome: "objeto",
+};
+
+// Executa:
+if ("nome" in obj) {
+  console.log(obj.nome);
+}
+
+// Não executa:
+if ("preco" in obj) {
+  console.log(obj.preco);
+}
+```
+
+## Unknown
+
+Tipo que tem a função de deixar passar qualquer valor, com tanto que exista uma type guard seguinte.
+
+```tsx
+function unknownTypeGuard(param: unknown) {
+  if (typeof param === "number") {
+    return param.toFixed;
+  }
+  if (typeof param === "string") {
+    return param.toLowerCase;
+  }
+}
+```
+
+## Type predicate
+
+Sintaxe especial para indicar uma função que retorna um valor boolean utilizando uma type guard (is).
+
+```tsx
+function normaliza(param: unknown) {
+  if (isString(param)) {
+    return param.toLowerCase;
+  }
+  return null;
+}
+
+function isString(value: unknown): value is string {
+  return typeof value === "string";
+}
+```
+
+Type predicate para objetos
+
+```tsx
+interface Produto {
+  nome: string;
+  preco: number;
+}
+
+function isProduto(value: unknown): value is Produto {
+  if (
+    value &&
+    typeof value === "object" &&
+    "nome" in value &&
+    "preco" in value
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function handleProduto(data: unknown) {
+  if (isProduto(data)) {
+    console.log(data);
+  }
+}
 ```
