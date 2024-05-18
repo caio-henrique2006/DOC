@@ -1,7 +1,5 @@
 # TypeScript
 
-[type](https://github.com/caio-henrique2006/DOC/blob/main/DocMD/typescript.md#type-guard-1)
-
 ## Conceitos
 
 ### Utilidades do typescript
@@ -13,6 +11,8 @@
 
 - Conceito de proteção do tipo, permitindo que um bloco de código seja executado com certeza do tipo de dado de sua variável (type narrowing). Isso também permite o controle de fluxo do programa.
 
+<details>
+<summary>Comandos</summary>
 ## Comandos
 
 ```tsx
@@ -26,7 +26,7 @@ tsc // Compila todos os arquivos TS em JS
 
 tsc -w // Compila a todo novo salvamento TS em JS
 ```
-
+</details>
 ## tsconfig
 
 ```tsx
