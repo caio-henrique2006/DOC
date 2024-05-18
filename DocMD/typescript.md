@@ -1,6 +1,6 @@
 # TypeScript
 
-[null](caio-henrique2006/DOC/edit/main/DocMD/Conceitos.md#o-que-%C3%A9-compilation-just-in-time-ou-dinamic-compilation-jit)
+[null](DOC/edit/main/DocMD/Conceitos.md#o-que-%C3%A9-compilation-just-in-time-ou-dinamic-compilation-jit)
 
 ## Conceitos
 
