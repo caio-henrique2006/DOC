@@ -311,6 +311,34 @@ async function handleProduto1() {
 handleProduto1();
 ```
 
+## !
+
+Indica que um elemento não pode ser null.
+
+```tsx
+document.querySelector("a")!.href = "https://www.suap.com.br";
+```
+
+## Intersection
+
+Junta os parâmetros de interfaces e tipos.
+
+```tsx
+const Produto = {
+  preco: number;
+}
+
+const Livro = {
+  nome: string;
+  autor: string;
+}
+
+function show (obj: Produto & Livro) {
+  console.log(nome, autor, preco);
+}
+
+```
+
 ## Overload
 
 Utilizado para definir possibilidades: entrada -> retorno
@@ -379,4 +407,18 @@ function handleProduto(data: unknown) {
     console.log(data);
   }
 }
+```
+
+## Desconstruindo
+
+```tsx
+function handleData({ nome, tamanho }: { nome: string; tamanho: number }) {
+  return tamanho;
+}
+
+const obj = {
+  nome: "Objeto",
+  tamanho: 10,
+  data: "janeiro",
+};
 ```

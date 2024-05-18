@@ -38,3 +38,14 @@ async function fetch() {
     handleFetch(json);
 }
 ```
+
+## ...rest
+
+Define um número infinito de parâmetros.
+
+```jsx
+function data(operacao, ...numeros) {
+  // numeros = Array
+  numeros.forEach((e) => console.log(e));
+}
+```

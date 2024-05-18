@@ -1,16 +1,11 @@
-interface Produto {
-  nome: string;
+function handleData({ nome, tamanho }: { nome: string; tamanho: number }) {
+  return tamanho;
 }
 
-async function fetchProduto() {
-  const response = await fetch("https://api.origamid.dev/json/notebook.json");
-  // Retorna o valor como a interface Produto:
-  return response.json() as Promise<Produto>;
-}
+const obj = {
+  nome: "Objeto",
+  tamanho: 10,
+  data: "janeiro",
+};
 
-async function fetchP() {
-  const result = await fetchProduto();
-  console.log(result.nome);
-}
-
-fetchP();
+console.log(handleData(obj));
