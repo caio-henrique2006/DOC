@@ -248,31 +248,6 @@ erro("Deu erro");
 console.log("Continua?");
 ```
 
-## Overload
-
-Utilizado para definir possibilidades: entrada -> retorno
-
-```tsx
-function retorno<T>(param: boolean): boolean;
-function retorno<T>(param: string): number;
-function retorno<T>(param: number): string;
-function retorno<T>(param: T) {
-  if (typeof param === "string") {
-    return Number(param);
-  } else if (typeof param === "number") {
-    return String(param);
-  } else {
-    return !param;
-  }
-}
-
-retorno("200");
-console.log(typeof NaN);
-retorno(200);
-retorno(20.2);
-retorno(true);
-```
-
 ## In
 
 Checa se existe ou não um valor dentro de um objeto.
@@ -306,6 +281,59 @@ function unknownTypeGuard(param: unknown) {
     return param.toLowerCase;
   }
 }
+```
+
+## as
+
+Indica para o type script o tipo do dado. Evitar o uso.
+
+```tsx
+// Não recomendado:
+const video = document.querySelector(".video") as HTMLVideoElement;
+
+video.volume;
+
+// Mais recomendado:
+interface Produto {
+  nome: string;
+}
+
+async function fetchProduto() {
+  const response = await fetch("https://api.origamid.dev/json/notebook.json");
+  return response.json() as Promise<Produto>;
+}
+
+async function handleProduto1() {
+  const produto = await fetchProduto();
+  console.log(produto.nome);
+}
+
+handleProduto1();
+```
+
+## Overload
+
+Utilizado para definir possibilidades: entrada -> retorno
+
+```tsx
+function retorno<T>(param: boolean): boolean;
+function retorno<T>(param: string): number;
+function retorno<T>(param: number): string;
+function retorno<T>(param: T) {
+  if (typeof param === "string") {
+    return Number(param);
+  } else if (typeof param === "number") {
+    return String(param);
+  } else {
+    return !param;
+  }
+}
+
+retorno("200");
+console.log(typeof NaN);
+retorno(200);
+retorno(20.2);
+retorno(true);
 ```
 
 ## Type predicate
