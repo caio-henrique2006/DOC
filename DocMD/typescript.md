@@ -1,6 +1,7 @@
 # TypeScript
 
-## Conceitos
+<details>
+<summary><h2>Conceitos</h2></summary>
 
 ### Utilidades do typescript
 
@@ -10,8 +11,10 @@
 ### Type guard
 
 - Conceito de proteção do tipo, permitindo que um bloco de código seja executado com certeza do tipo de dado de sua variável (type narrowing). Isso também permite o controle de fluxo do programa.
-
-## Comandos
+ 
+</details>
+<details>
+<summary> <h2>Comandos</h2> </summary>
 
 ```tsx
 npm install -g typescript // Instalar TS globalmente
@@ -24,6 +27,7 @@ tsc // Compila todos os arquivos TS em JS
 
 tsc -w // Compila a todo novo salvamento TS em JS
 ```
+</details>
 
 ## tsconfig
 
