@@ -1,7 +1,6 @@
 # TypeScript
 
-<details>
-<summary><h2>Conceitos</h2></summary>
+## Conceitos
 
 ### Utilidades do typescript
 
@@ -11,10 +10,8 @@
 ### Type guard
 
 - Conceito de proteção do tipo, permitindo que um bloco de código seja executado com certeza do tipo de dado de sua variável (type narrowing). Isso também permite o controle de fluxo do programa.
- 
-</details>
-<details>
-<summary> <h2>Comandos</h2> </summary>
+
+## Comandos
 
 ```tsx
 npm install -g typescript // Instalar TS globalmente
@@ -27,7 +24,6 @@ tsc // Compila todos os arquivos TS em JS
 
 tsc -w // Compila a todo novo salvamento TS em JS
 ```
-</details>
 
 ## tsconfig
 
@@ -180,14 +176,23 @@ if (objeto instanceof Livro) {
 ## This ou event.currentTarget
 
 ```tsx
-
-function (this: HTMLButtonElement, event: MouseEvent) {
-	console.log(this);
+function ativarMenu(this: HTMLButtonElement, event: MouseEvent) {
+  console.log(this);
 }
 
 // OU
 
-button?.addEventListener("click", handleClick);
+function ativarMenu(event: Event) {
+  const elemento = event.currentTarget;
+  if (elemento instanceof HTMLElement) {
+    elemento.style.background = "red";
+  }
+}
+
+const button = document.querySelector("button");
+button?.addEventListener("click", ativarMenu);
+
+window.addEventListener("keydown", ativarMenu);
 ```
 
 ## Tipos genéricos
