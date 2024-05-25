@@ -17,10 +17,17 @@ function onRefresh() {
     const email = document.getElementById("email");
     const cpf = document.getElementById("cpf");
     const data = localStorage.getItem("userData");
-    if ()
-        if (isUserData(data)) {
+    if (isUserData(data)) {
+        if (nome instanceof HTMLInputElement) {
             nome.value = data.nome;
         }
+        if (email instanceof HTMLInputElement) {
+            email.value = data.email;
+        }
+        if (cpf instanceof HTMLInputElement) {
+            cpf.value = data.cpf;
+        }
+    }
 }
 function storage(event) {
     const elemento = event.currentTarget;

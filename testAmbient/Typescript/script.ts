@@ -9,6 +9,7 @@ interface userData {
 interface Window {
   userData: userData;
 }
+
 function isUserData(value: unknown): value is userData {
   if (
     value &&
@@ -29,10 +30,17 @@ function onRefresh() {
   const cpf = document.getElementById("cpf");
 
   const data = localStorage.getItem("userData");
-  if ()
-    if (isUserData(data)) {
+  if (isUserData(data)) {
+    if (nome instanceof HTMLInputElement) {
       nome.value = data.nome;
     }
+    if (email instanceof HTMLInputElement) {
+      email.value = data.email;
+    }
+    if (cpf instanceof HTMLInputElement) {
+      cpf.value = data.cpf;
+    }
+  }
 }
 
 function storage(event: Event) {
