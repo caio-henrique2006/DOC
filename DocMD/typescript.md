@@ -431,3 +431,18 @@ const obj = {
   data: "janeiro",
 };
 ```
+
+## Tuple
+
+Infere valores nas posições de um array.
+
+```tsx
+const produtoTuple: [string, number] = ["Caio", 200];
+
+produtoTuple[0].normalize(); // Entendi o [0] como string
+produtoTuple[1].toFixed(); // Entendi o [1] como number
+
+const [nome, preco] = produtoTuple;
+nome; // string
+preco; // number
+```

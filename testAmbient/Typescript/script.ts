@@ -1,74 +1,23 @@
-window.onload = onRefresh;
-
-interface userData {
-  nome: string;
-  email: string;
-  cpf: string;
+async function fetchData() {
+  const response = await fetch("https://api.origamid.dev/json/vendas.json");
+  const json = await response.json();
+  handleFetch(json);
 }
 
-interface Window {
-  userData: userData;
+interface propriedades {
+  marca: string;
+  cor: string;
 }
 
-function isUserData(value: unknown): value is userData {
-  if (
-    value &&
-    typeof value === "object" &&
-    "name" in value &&
-    "email" in value &&
-    "cpf" in value
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+type Vendas = [string, number, string, propriedades];
+
+function handleFetch(data: Vendas[]) {
+  const p_somaVendas = <HTMLElement>document.getElementById("somaVendas");
+  let soma = 0;
+  data.forEach((e) => {
+    soma += e[1];
+  });
+  p_somaVendas.innerText = String(soma);
 }
 
-function onRefresh() {
-  const nome = document.getElementById("nome");
-  const email = document.getElementById("email");
-  const cpf = document.getElementById("cpf");
-
-  const data = localStorage.getItem("userData");
-  if (isUserData(data)) {
-    if (nome instanceof HTMLInputElement) {
-      nome.value = data.nome;
-    }
-    if (email instanceof HTMLInputElement) {
-      email.value = data.email;
-    }
-    if (cpf instanceof HTMLInputElement) {
-      cpf.value = data.cpf;
-    }
-  }
-}
-
-function storage(event: Event) {
-  const elemento = event.currentTarget;
-
-  if (elemento instanceof HTMLInputElement) {
-    if (elemento.id === "nome") {
-      window.userData.nome = elemento.value;
-    }
-    if (elemento.id === "email") {
-      window.userData.email = elemento.value;
-    }
-    if (elemento.id === "cpf") {
-      window.userData.cpf = elemento.value;
-    }
-    localStorage.setItem("userData", JSON.stringify(window.userData));
-  }
-}
-
-const nome = document.getElementById("nome");
-const email = document.getElementById("email");
-const cpf = document.getElementById("cpf");
-
-nome?.addEventListener("keyup", storage);
-email?.addEventListener("keyup", storage);
-cpf?.addEventListener("keyup", storage);
-
-/*
-localStorage.setItem("total", value);
-localStorage.getItem("total");
-*/
+fetchData();

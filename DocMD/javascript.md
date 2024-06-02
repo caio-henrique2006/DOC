@@ -33,9 +33,9 @@ function show() {
 
 ```jsx
 async function fetch() {
-    const response = const fetch("URL");
-    const json = await response.json();
-    handleFetch(json);
+  const response = await fetch("URL");
+  const json = await response.json();
+  handleFetch(json);
 }
 ```
 
