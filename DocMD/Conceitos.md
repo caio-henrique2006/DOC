@@ -15,3 +15,7 @@
 ## Qual a diferença entre linguagens compiladas e interpretadas?
 
 As linguagens compiladas são mais rápidas pois são traduzidas diretamente pelo sistema. Já as interpretadas passam por um processo intermediário de interpretação que as deixam mais lentas, entretanto permitem outras funcionalidades. Não necessariamente uma linguagem só pode ser executada em um deles, muitas linguagens podem tanto ser executados em tempo de compilação quanto interpretação.
+
+## O que é um servidor Proxy?
+
+Um servidor proxy é um intermediário entre o usuário e a internet que permite uma camada de segurança entre os dois, ele pode ser configurado como um filtro para a web ou mesmo um firewall. Um servidor proxy impede que o seu endereço IP seja exposto na internet, dessa forma, permite uma camada intermediária de segurança.
