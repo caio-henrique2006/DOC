@@ -446,3 +446,19 @@ const [nome, preco] = produtoTuple;
 nome; // string
 preco; // number
 ```
+
+## Keyof
+
+Usado para definir o nome dos atributos dentro de uma interface ou tipo
+
+```tsx
+interface Livro {
+  nome: string;
+  autor: string;
+  preco: string;
+}
+
+let chave: keyof Livro;
+
+chave = "nome"; // Mostra as "chaves" (atributos) de Livro;
+```

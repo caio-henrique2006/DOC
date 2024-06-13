@@ -51,16 +51,17 @@ function data(operacao, ...numeros) {
 ```
 
 ## Requisição de PHP com AJAX
+
 ```js
 var data = "";
 function fetchData() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        data = this.responseText;
-        console.log(this.readyState);
-        console.log(this.status);
-    }
-    xmlhttp.open("GET", "getData.php");
-    xmlhttp.send();
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    data = this.responseText;
+    console.log(this.readyState);
+    console.log(this.status);
+  };
+  xhttp.open("GET", "getData.php?param=" + param);
+  xmlhttp.send();
 }
 ```
