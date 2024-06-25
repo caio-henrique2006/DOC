@@ -65,3 +65,19 @@ function fetchData() {
   xmlhttp.send();
 }
 ```
+
+## import export
+
+```js
+// util.js
+export function date() {
+  return Date();
+}
+
+export const name = "Caio";
+
+// index.js
+import { date, name } from "./utilities.js";
+
+console.log(date(), name);
+```

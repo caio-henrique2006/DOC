@@ -70,3 +70,12 @@ $stmt->execute();
 $result = $stmt->setFetchMode(PDO::FETCH_NUM);
 $response = $stmt->fetchAll();
 ```
+
+## Usando Datetime
+
+```php
+$currentBeginDate = date("Y-m-" . "01");
+$currentDate = date("Y-m-d", time());
+
+echo $currentDate . ":" . $currentBeginDate;
+```
