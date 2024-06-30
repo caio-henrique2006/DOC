@@ -79,3 +79,19 @@ $currentDate = date("Y-m-d", time());
 
 echo $currentDate . ":" . $currentBeginDate;
 ```
+
+## Usando Cokkies
+
+```php
+<?php
+
+$location = "no cookie";
+
+if (isset($_COOKIE['language'])) {
+    $location = $_COOKIE['language'];
+} else {
+    setcookie("language", "pt-br", time() + 60 * 60, '/');
+}
+
+echo $location;
+```
