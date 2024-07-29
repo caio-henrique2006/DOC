@@ -1,0 +1,14 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "Ambiente de teste com electron",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Caio Henrique",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.3.0"
+  }
+}
