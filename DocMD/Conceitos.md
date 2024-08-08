@@ -19,3 +19,7 @@ As linguagens compiladas são mais rápidas pois são traduzidas diretamente pel
 ## O que é um servidor Proxy?
 
 Um servidor proxy é um intermediário entre o usuário e a internet que permite uma camada de segurança entre os dois, ele pode ser configurado como um filtro para a web ou mesmo um firewall. Um servidor proxy impede que o seu endereço IP seja exposto na internet, dessa forma, permite uma camada intermediária de segurança.
+
+## O que são polyfills?
+
+Polyfills são funcionalidades que você espera que estejam no browser nativamente, e quando não estão, se é criado um script (polyfill) que "dá um jeito" (poly) de introduzir aquela tecnologia.

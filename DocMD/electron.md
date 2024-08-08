@@ -30,7 +30,42 @@ Mesmo que o renderer e o preload compartilham a mesma interface global Window, d
 
 IPC é utilizado para comunicar o processamento do renderer com o main. Ele permite criar aplicações mais complexas que utilizam das ferramentas nativas do electron e das windows.
 
+### App module e apps lifecycle:
+
+Controla o lifecycle do seu app, ele é um event emitter do node.js e vai escutar eventos dentro da sua aplicação electron.
+
 ## Código:
+
+### main.js basic template code:
+
+```js
+const { app, BrowserWindow } = require("electron/main");
+
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+  });
+
+  win.loadFile("index.html");
+};
+
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
+  });
+});
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
+```
 
 ### Definindo um preload script para uma janela:
 

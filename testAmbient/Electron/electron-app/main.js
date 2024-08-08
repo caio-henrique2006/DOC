@@ -1,7 +1,30 @@
-const { BrowserWindow } = require("electron");
+const { app, BrowserWindow } = require("electron");
+const path = require("node:path");
 
-const win = new BrowserWindow({ width: 800, height: 1500 });
-win.loadURL("https://github.com");
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, "preload.js"),
+    },
+  });
 
-const contents = win.webContents;
-console.log(contents);
+  win.loadFile("index.html");
+};
+
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+
+app.on("before-quit", () => {
+  console.log("You closed the window");
+});
+
+app.on("window-all-closed", () => {
+  app.quit();
+});
