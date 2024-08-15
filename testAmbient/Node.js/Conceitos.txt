@@ -1,3 +1,0 @@
-. O que é Node.js?
-- Node.js é um ambiente de execução do código javascript fora do browser, ele funciona de forma assincrona, ou seja, as requisições
-para ele não se empilham, ele está sempre disponível para a próxima mesmo se a última ainda não tiver tido uma resposta.
