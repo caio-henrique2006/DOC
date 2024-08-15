@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "prod": "node server.js"
+  },
+  "name": "node-test-ambient",
+  "version": "1.0.0",
+  "description": "Only for tests",
+  "main": "server.js",
+  "author": "Caio",
+  "license": "MIT"
+}

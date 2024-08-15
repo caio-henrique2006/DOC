@@ -23,3 +23,10 @@ Um servidor proxy é um intermediário entre o usuário e a internet que permite
 ## O que são polyfills?
 
 Polyfills são funcionalidades que você espera que estejam no browser nativamente, e quando não estão, se é criado um script (polyfill) que "dá um jeito" (poly) de introduzir aquela tecnologia.
+
+## Quais são os 4 tipos diferentes de enviroments?
+
+Development
+Testing
+Staging
+Production
