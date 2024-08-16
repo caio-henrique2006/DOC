@@ -5,3 +5,5 @@
 ## [Typescript](DocMD/typescript.md)
 
 ## [Javascript](DocMD/javascript.md)
+
+## [Python]
