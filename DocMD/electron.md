@@ -36,6 +36,26 @@ Controla o lifecycle do seu app, ele é um event emitter do node.js e vai escuta
 
 ## Código:
 
+### Default package.json:
+
+```json
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Hello World!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jane Doe",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "23.1.3"
+  }
+}
+```
+
 ### main.js basic template code:
 
 ```js
