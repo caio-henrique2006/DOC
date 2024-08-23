@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node server.js",
+    "start": "node --inspect server.js",
     "dev": "node server.js",
     "prod": "node server.js"
   },

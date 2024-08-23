@@ -30,3 +30,11 @@ Development
 Testing
 Staging
 Production
+
+## Qual a diferença entre Production e Development enviroment?
+
+Enquanto development enviroments tem várias versões do produto, testes e outros, o ambiente de produção é simplesmente o estado atual do produto final.
+
+## O que é profiling?
+
+Profiling é o processo de observar características da execução de uma aplicação, como seu consumo de memória, tempo de processamento, número de chamadas a funções, entre outros. Informações importantes para entender a performace de uma aplicação enquanto roda, permitindo destacar processos lentos, algoritmos mal otimizados, mal uso de memória entre outros. Seu principal objetivo é permitir que o desenvolvedor tenha acesso ao impacto geral da aplicação na máquina.
