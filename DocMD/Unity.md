@@ -36,3 +36,15 @@ GameObject = GameObject.Find("RotateOrienter");
 // Fórmula de Torriceli
 jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * gravityScale));
 ```
+
+### Criar rotação
+
+```c#
+Quaternion rotation = Quaternion.identity;
+```
+
+### Instanciar um GameObject
+
+```c#
+Instantiate(GameObject, coordinates, rotation);
+```
