@@ -38,3 +38,15 @@ Enquanto development enviroments tem várias versões do produto, testes e outro
 ## O que é profiling?
 
 Profiling é o processo de observar características da execução de uma aplicação, como seu consumo de memória, tempo de processamento, número de chamadas a funções, entre outros. Informações importantes para entender a performace de uma aplicação enquanto roda, permitindo destacar processos lentos, algoritmos mal otimizados, mal uso de memória entre outros. Seu principal objetivo é permitir que o desenvolvedor tenha acesso ao impacto geral da aplicação na máquina.
+
+## O que é o Unix?
+
+Considerado o pai dos sistemas operacionais foi (provavelmente) o primeiro sistema operacional completo. Sendo portável (Pode ser executado independente da arquitetura), multitarefa (pode executar mais de uma tarefa ao mesmo tempo) e multiusuário (Permite mais de um usuário ao mesmo tempo).
+
+## O que é Kernel?
+
+Kernel é o núcleo do sistema operacional. Ele funciona diretamente com o hardware e não se comunica com o usuário.
+
+## O que é o Shell?
+
+Shell é o programa que atua como a interface entre o usuário e o Kernel de um sistema operacional.
