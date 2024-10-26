@@ -8,15 +8,17 @@ Um sistema de controle de versionamento de código é simplesmente um sistema qu
 
 ## Centralized Version Control Systems (CVCS)
 
-Sistemas de controle de versionamento que ficavam armazenados em um servidor e permitiam os usuários compartilhar as suas contribuições com o projeto. Um problema com esses sistemas é que como todo o projeto está sendo compartilhado em um único servidor, caso esse servidor fora do ar, ou seu armazenamento se corrompa sem um backup próximo, parte ou todo o projeto se perde.
+Sistemas de controle de versionamento que ficavam armazenados em um servidor e permitiam os usuários compartilhar as suas contribuições com o projeto.
+Um problema com esses sistemas é que como todo o projeto está sendo compartilhado em um único servidor, caso esse servidor fique fora do ar não é possível trabalhar nele e se seu armazenamento se corromper sem um backup próximo, parte ou todo o projeto se perde.
 
 ## Distributed Version Control Systems (DVCS)
 
-Sistemas de controle de versionamento que ao invés de ter os arquivos centralizados em um servidor, todos os usuários conseguem gerar uma cópia espelhada desses arquivos, podendo trabalhar localmente como um VCS e enviar suas contribuições para o servidor conjunto como um CVCS. Git é um exemplo de Sistema de Controle de Versionamento Distribuído.
+Sistemas de controle de versionamento que ao invés de ter os arquivos centralizados em um servidor, todos os usuários conseguem gerar uma cópia espelhada desses arquivos, podendo trabalhar localmente como um VCS e enviar suas contribuições para o servidor conjunto como um CVCS.
+Git é um exemplo de Sistema de Controle de Versionamento Distribuído.
 
 ## Git snapshots (picture) logic
 
-Toda vez que um código é comittado, o git tira uma foto (print) de como os arquivos do projeto estão naquele exato momento. Essa forma diferente de pensar, já que outras Sistemas de Versionamento guardavam as mudanças no que é chamado de **delta-based version control**, onde cada "commit" guardava apenas as mudanças que ocorreram de um arquivo para o outro.
+Toda vez que um código é commitado, o git tira uma foto (print) de como os arquivos do projeto estão naquele exato momento. Essa forma é diferente de pensar, já que outras Sistemas de Versionamento guardavam as mudanças no que é chamado de **delta-based version control**, onde cada "commit" guardava apenas as mudanças que ocorreram de um arquivo para o outro.
 
 ## Porque git é poderoso localmente?
 
@@ -43,6 +45,10 @@ Todo arquivo no seu projeto pode ter 3 estados.
 ## Ação:
 
 ```bash
+# Cria um novo repositório git localmente. Cria uma pasta .git no diretório onde é executado
+git init
+
+#
 git add .
 git commit -m "comentário"
 git push
