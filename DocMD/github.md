@@ -40,17 +40,50 @@ Todo arquivo no seu projeto pode ter 3 estados.
 - staged: Arquivos modificados escolhidos que vão fazer parte do próximo commit
 - committed: Você comittou seus arquivos staged e agora eles representam a versão atual do seu arquivo.
 
+## O que são untracked files em git?
+
+São todos os arquivos adicionados no repositório que ainda não foram colcoados em nenhum commit. Use git add para fazer o tracking do arquivo.
+
 # Commands
 
 ## Ação:
 
 ```bash
+# Comandos para as configurações do git
+git config --list
+git config --global user.name <name>
+git config --global user.email <email>
+
 # Cria um novo repositório git localmente. Cria uma pasta .git no diretório onde é executado
 git init
 
-#
+# Adiciona os arquivos modificados para o próximo commit
 git add .
+
+# Mostra o estado dos arquivos do projeto:
+git status
+git status -s
+
+# Mostra as exatas mudanças que ocorreram nos arquivos:
+git diff
+git diff --staged
+git diff --cached
+
+# Clona um repositório git inteiro
+git clone <url>
+git clone <url> <directory_name>
+
+# Faz o commit (snapshot) do código:
+git commit
 git commit -m "comentário"
+git commit -a # Stage todos os arquivos modificados e commita.
+
+# Remover arquivo tracked
+git rm <file>
+git rm -f <file> # Força caso o arquivo já tenha sido staged para o próximo commit
+git rm --cached <file> # Remove do staged
+git restore --staged <file> # Remove do staged
+
 git push
 git branch
 git checkout -b [nova-branch] [tracking-branch]
