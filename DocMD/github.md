@@ -44,6 +44,10 @@ Todo arquivo no seu projeto pode ter 3 estados.
 
 São todos os arquivos adicionados no repositório que ainda não foram colcoados em nenhum commit. Use git add para fazer o tracking do arquivo.
 
+## Diferença entre autor e commiter em git
+
+Autor é a pessoa que fez o código, que o modificou. Já o commiter foi a pessoa que aplicou essas modificações em um commit. Dessa forma, tanto a pessoa que commitou quanto o próprio autor ganham crédito pelo commit.
+
 # Commands
 
 ## Ação:
@@ -83,6 +87,22 @@ git rm <file>
 git rm -f <file> # Força caso o arquivo já tenha sido staged para o próximo commit
 git rm --cached <file> # Remove do staged
 git restore --staged <file> # Remove do staged
+
+# Mostra o histórico de commits
+git log
+git log -2 # Mostra apenas os dois últimos commits
+git log -p # Mostra as mudanças que ocorreram no commit
+git log --stat # Mostra as estatíticas do commit
+git log --pretty=online # Mostra os commits com uma formatação diferente, existem várias opções para o --pretty
+git log --graph # Mostra o caminho de criação e merge das branches.
+git log --since="2022-10-01"
+git log --until="2023-10-03"
+git log --author="Caio Henrique"
+git log --grep="keyword"
+git log -- path/to/file
+git log --no-merges # Não mostra os commits de merge.
+
+git commit --amend # permite substituir o último commit caso tenha esquecido de algo.
 
 git push
 git branch
