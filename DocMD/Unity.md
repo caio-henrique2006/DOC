@@ -41,6 +41,8 @@ jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * gravityScale));
 
 ```c#
 Quaternion rotation = Quaternion.identity;
+
+transform.parent.rotation = Quaternion.Euler(0, Angle, 0);
 ```
 
 ### Instanciar um GameObject
