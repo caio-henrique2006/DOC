@@ -41,3 +41,12 @@ x é o resultado do somatório
 ![Soma de vetor + n](../img/soma_matriz_n.png)
 ![Soma de vetor + vetor](../img/soma_matriz_matriz.png)
 ![Multiplicação de vetor + vetor](../img/mult_matriz_matriz.png)
+![Multiplicação de matriz * n ](../img/matriz_mult_n.png)
+![Switch matriz](../img/switch_matriz.png)
+![matriz soma matriz equalSize](../img/matriz_soma_matriz_equalSize.png)
+![matriz multiplicação matriz](../img/matriz_mult_matriz.png)
+
+## Computação em Multi Layer Perception (MLP)
+![Weigth](../img/Weigth.png)
+![Net Input](../img/Net%20input.png)
+![Activation](../img/Activation.png)
