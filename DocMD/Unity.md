@@ -50,3 +50,9 @@ transform.parent.rotation = Quaternion.Euler(0, Angle, 0);
 ```c#
 Instantiate(GameObject, coordinates, rotation);
 ```
+
+### Get child of a GameObject
+
+```c#
+transform.GetChild(index)
+```
