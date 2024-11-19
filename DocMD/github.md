@@ -48,9 +48,13 @@ São todos os arquivos adicionados no repositório que ainda não foram colcoado
 
 Autor é a pessoa que fez o código, que o modificou. Já o commiter foi a pessoa que aplicou essas modificações em um commit. Dessa forma, tanto a pessoa que commitou quanto o próprio autor ganham crédito pelo commit.
 
+## Dois tipos de Tag em git lightweight e annotated
+
+A lightweight é simplesmente uma tag simples de texto que aponta para o commit. Já a tag annotated guarda diversas informações de quem fez o commit com segurança e assinatura GNU Privacy Guard.
+
 # Commands
 
-## Ação:
+## Configuration
 
 ```bash
 # Comandos para as configurações do git
@@ -58,36 +62,61 @@ git config --list
 git config --global user.name <name>
 git config --global user.email <email>
 
+```
+
+## Iniciar git
+
+```bash
 # Cria um novo repositório git localmente. Cria uma pasta .git no diretório onde é executado
 git init
-
-# Adiciona os arquivos modificados para o próximo commit
-git add .
-
-# Mostra o estado dos arquivos do projeto:
-git status
-git status -s
-
-# Mostra as exatas mudanças que ocorreram nos arquivos:
-git diff
-git diff --staged
-git diff --cached
-
-# Clona um repositório git inteiro
 git clone <url>
 git clone <url> <directory_name>
 
+```
+
+## Modifying
+
+```bash
+git checkout -- <file>
+git restore <file>
+```
+
+## Stage
+
+```bash
+# Adiciona os arquivos modificados para o próximo commit (staging)
+git add .
+git reset HEAD <file> # Tira o arquivo do próximo commit
+git rm <file> # Remover arquivo tracked
+git rm -f <file> # Força caso o arquivo já tenha sido staged para o próximo commit
+git rm --cached <file> # Remove do staged
+git restore --staged <file> # Remove do staged
+```
+
+## Consulta
+
+```bash
+# Mostra o estado dos arquivos do projeto:
+git status
+git status -s
+git branch -r
+git branch -avv
+```
+
+## Commiting
+
+```bash
 # Faz o commit (snapshot) do código:
 git commit
 git commit -m "comentário"
 git commit -a # Stage todos os arquivos modificados e commita.
+git commit --amend # permite substituir o último commit caso tenha esquecido de algo.
 
-# Remover arquivo tracked
-git rm <file>
-git rm -f <file> # Força caso o arquivo já tenha sido staged para o próximo commit
-git rm --cached <file> # Remove do staged
-git restore --staged <file> # Remove do staged
+```
 
+## Logs (Commit history)
+
+```bash
 # Mostra o histórico de commits
 git log
 git log -2 # Mostra apenas os dois últimos commits
@@ -101,20 +130,45 @@ git log --author="Caio Henrique"
 git log --grep="keyword"
 git log -- path/to/file
 git log --no-merges # Não mostra os commits de merge.
+# Mostra as exatas mudanças que ocorreram nos arquivos:
+git diff
+git diff --staged
+git diff --cached
+```
 
-git commit --amend # permite substituir o último commit caso tenha esquecido de algo.
+## Remote repository
+
+```bash
+git remote # Indica o repositório remoto configurado para aquele projeto
+git remote -v # Link do repositório
+git remote add <shortname> <url> # Adiciona um novo repositório remoto (usar fetch para puxar a branch main)
+git remote show <remote>
+git remote rename <remote> <new-shortname>
+git remote remove <remote>
+git fetch <remote> # Pega os dados do repositório remoto que você não tem (não faz o merge)
+git pull # Puxa os dados do repositório remoto daquela branch (se tiver) (faz o merge)
+git push <remote> <branch> # Envia seus commits para o repositório remoto
+```
+
+## Tagging
+
+```bash
+git tag -l # Lista todas as tags
+git tag -a <tag-name> -m "<message>" # Cria uma tag
+git show <tag-name> # Mostra uma tag específica
+git tag <tag-name> # lightweigth tag
+git tag -a <tag-name> <commit-checksum(hash)> # Tagging em um commit passado
+git push origin <tag-name>
+git push origin --tags # Envia as tags para o repositório remoto
+git tag -d <tagname> # Deletando tag
+git push origin --delete <tagname> # Deleta tag do repositório remoto
+```
+
+```bash
 
 git push
 git branch
 git checkout -b [nova-branch] [tracking-branch]
 git checkout [branch]
 git merge [branch-to-be-merged-to-current-branch]
-```
-
-## Consulta:
-
-```bash
-git status
-git branch -r
-git branch -avv
 ```
