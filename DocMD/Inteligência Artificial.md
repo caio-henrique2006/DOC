@@ -50,3 +50,26 @@ x é o resultado do somatório
 ![Weigth](../img/Weigth.png)
 ![Net Input](../img/Net%20input.png)
 ![Activation](../img/Activation.png)
+
+## Theory behind trainig a neural network
+Input signal (forward propagation) em que se processa:
+- Get prediction: (Net input and activation function)
+- Calculate the error (E = Error(prediction, expected_outcome), like activation functions that are various ways of calculating the error, one of which is the quadratic formula: 1/2*(p - ex)**2)
+Error signal (backwark propagation) em que se processa:
+- Calculate gradient of error function over the weigths (caculate derivatives)
+- Update parameters (Gradient descent)
+
+## Caculate gradient of error function over the weigths (calculus):
+![](../img/back_propagate_1.png)
+![](../img/back_propagate_3.png)
+![](../img/back_propagate_11.png)
+![](../img/back_propagate_4.png)
+![](../img/back_propagate_5.png)
+![](../img/back_propagate_6.png)
+![](../img/back_propagate_7.png)
+![](../img/back_propagate_8.png)
+![](../img/back_propagate_9.png)
+![](../img/back_propagate_10.png)
+
+## Gradient descent
+![](../img/gradient%20descent.png)
