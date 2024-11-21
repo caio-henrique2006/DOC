@@ -52,6 +52,15 @@ Autor é a pessoa que fez o código, que o modificou. Já o commiter foi a pesso
 
 A lightweight é simplesmente uma tag simples de texto que aponta para o commit. Já a tag annotated guarda diversas informações de quem fez o commit com segurança e assinatura GNU Privacy Guard.
 
+## O que o HEAD em git e como funciona a lógica de pointers?
+
+O HEAD é um pointer especial que indica em que branch você está naquele momento. A branch por consequência aponta para um commit e um commit aponta para seus commits passados e internamente para os arquivos em árvore armazenados (snapshots)
+
+## O que é fast-forward merging e merge commit em git?
+
+fast-forward merge ocorre quando é possível fazer o merge de duas branches que são parentes diretas na árvore, por exemplo, a master branch e um hotfix rápido. Dessa forma git apenas aponta a master branch direto para a branch hotfix, já que não existe outros commits diferentes no meio entre os dois.
+Já o merge commit ocorre quando as branches não são parentes diretos, ou seja, existem modificações nas duas. Então o git vai criar um novo commit (snapshot) que vai representar o merge das modificações das duas. Esse commit é conhecido por merge commit.
+
 # Commands
 
 ## Configuration
@@ -162,6 +171,21 @@ git push origin <tag-name>
 git push origin --tags # Envia as tags para o repositório remoto
 git tag -d <tagname> # Deletando tag
 git push origin --delete <tagname> # Deleta tag do repositório remoto
+```
+
+## Branching
+
+```bash
+git branch # Shows list of branches
+git branch -v # Shows last commit on branch
+git branch --merged # shows list of branches tat you didnt merge
+git branch <branch-name> # Create branch
+git branch -d <branch-name> # Deleta branch
+git branch --move <old-branch-name> <new-branch-name> # Changes branch name
+git merge <branch-name> # Merge the current HEAD->Branch to the <branch-name>
+
+git checkout <branch-name> # Moves HEAD to branch-name
+git checkout -b <branch-name> # Create and moves HEAD to branch-name
 ```
 
 ```bash
