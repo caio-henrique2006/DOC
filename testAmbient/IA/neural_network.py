@@ -1,4 +1,5 @@
 import numpy as np
+from random import random
 
 class MLP:
     def __init__(self, num_inputs=3, num_hidden=[3, 5], num_outputs=2):
@@ -54,12 +55,31 @@ class MLP:
     def gradient_descent(self, learning_rate):
         for i in range(len(self.weights)):
             weights = self.weights[i]
-            print("Original W{} {}".format(i, weights))
+            # print("Original W{} {}".format(i, weights))
             derivatives = self.derivatives[i]
             weights += derivatives * learning_rate
-            print("Updated W{} {}".format(i, weights))
+            # print("Updated W{} {}".format(i, weights))
+    
+    def train(self, inputs, targets, epochs, learning_rate):
+        for i in range(epochs):
+            sum_error = 0
+            for input, target in zip(inputs, targets):
+                # perform forward propagation
+                output = self.forward_propagate(input)
+                # calculate the error
+                error = target - output
+                # back propagation
+                self.back_propagate(error)
+                # Apply gradient descent
+                self.gradient_descent(learning_rate)
+                sum_error += self._mse(target, output)
+            # report error
+            # print("Error: {} at epoch {}".format(sum_error/len(inputs), i))
 
 
+    def _mse(self, target, output):
+        return np.average((target - output)**2)
+   
     def _sigmoid_derivative(self, x):
         return x * (1.0 * x)
 
@@ -67,21 +87,19 @@ class MLP:
         return 1 / (1 + np.exp(-x))
 
 if __name__ == "__main__":
+    # Dummy dataset
+    inputs = np.array([[random() / 2 for _ in range(2)] for _ in range(1000)])
+    targets = np.array([[i[0] + i[1]] for i in inputs])
+    
     # create an MLP
     mlp = MLP(2, [5], 1)
-    
-    # create inputs
-    input = np.array([0.1, 0.2])
-    target = np.array([0.3])
 
-    # perform forward propagation
+    # train out mlp
+    mlp.train(inputs, targets, 100, 0.1)
+    # Dummy data:
+    input = np.array([0.3, 0.3])
+    target = np.array([0.4])
     output = mlp.forward_propagate(input)
-
-    # calculate the error
-    error = target - output
-
-    # back propagation
-    mlp.back_propagate(error)
-
-    # Apply gradient descent
-    mlp.gradient_descent(learning_rate=1)
+    print()
+    print(output)
+    print("Our network believes that {} + {} is equal to {}".format(input[0], input[1], round(output[0], 1)))
