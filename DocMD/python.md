@@ -20,3 +20,8 @@ lista_excel = []
 for row in csvreader:
   lista_excel.append(row)
 ```
+
+## Create virtual enviroment
+```shell
+python3 -m venv <virtual_enviroment_name> # It is gonna display it self like a folder
+```
