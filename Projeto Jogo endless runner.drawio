@@ -63,27 +63,50 @@
           <mxGeometry x="40" y="100" width="140" height="40" as="geometry" />
         </mxCell>
         <mxCell id="_zeqTD-cbf3Eoh2X06K5-77" value="Road" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="840" y="70" width="290" height="158" as="geometry">
+          <mxGeometry x="780" y="190" width="290" height="132" as="geometry">
             <mxRectangle x="730" y="140" width="110" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="_zeqTD-cbf3Eoh2X06K5-78" value="+ road_prefab: GameObject" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-77">
           <mxGeometry y="26" width="290" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="_zeqTD-cbf3Eoh2X06K5-84" value="+ road_prefab: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-77">
-          <mxGeometry y="52" width="290" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="_zeqTD-cbf3Eoh2X06K5-79" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-77">
-          <mxGeometry y="78" width="290" height="2" as="geometry" />
+          <mxGeometry y="52" width="290" height="2" as="geometry" />
         </mxCell>
         <mxCell id="_zeqTD-cbf3Eoh2X06K5-83" value="+ spawnEnemies(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-77">
-          <mxGeometry y="80" width="290" height="26" as="geometry" />
+          <mxGeometry y="54" width="290" height="26" as="geometry" />
         </mxCell>
         <mxCell id="_zeqTD-cbf3Eoh2X06K5-81" value="+ spawnCoins()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-77">
-          <mxGeometry y="106" width="290" height="26" as="geometry" />
+          <mxGeometry y="80" width="290" height="26" as="geometry" />
         </mxCell>
         <mxCell id="_zeqTD-cbf3Eoh2X06K5-80" value="+ spawnRoad(GameObject): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-77">
+          <mxGeometry y="106" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-85" value="Spawn" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="360" width="290" height="184" as="geometry">
+            <mxRectangle x="730" y="140" width="110" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-86" value="+ road_prefab: GameObject[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-85">
+          <mxGeometry y="26" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-97" value="+ coin_prefab: GameObject[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-85">
+          <mxGeometry y="52" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-98" value="+ enemy_prefab: GameObject[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-85">
+          <mxGeometry y="78" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-87" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-85">
+          <mxGeometry y="104" width="290" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-88" value="+ spawnEnemies(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-85">
+          <mxGeometry y="106" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-89" value="+ spawnCoins()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-85">
           <mxGeometry y="132" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_zeqTD-cbf3Eoh2X06K5-90" value="+ spawnRoad(GameObject): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="_zeqTD-cbf3Eoh2X06K5-85">
+          <mxGeometry y="158" width="290" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
