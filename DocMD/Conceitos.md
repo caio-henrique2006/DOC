@@ -50,3 +50,16 @@ Kernel é o núcleo do sistema operacional. Ele funciona diretamente com o hardw
 ## O que é o Shell?
 
 Shell é o programa que atua como a interface entre o usuário e o Kernel de um sistema operacional.
+
+## Bluetooth BLE:
+
+É uma versão mais leve do bluetooth padrão.
+
+## Bluetooth BLE conceitos base:
+
+- **GAP**: Generic Access Profile, é o que faz seu dispositivo ser vísivel para outros. Ele pode definir o dispositivo em dois tipos.
+- **Peripheral**: dispositivos menores, com menos gasto energético que se conectam a um Central
+- **Central**: dispositivo central que se conecta com o Peripheral.
+- **advertising**: é o processo de transmitir a disponibilidade de conexão ou a própria conexão.
+- **GATT**: 
+
