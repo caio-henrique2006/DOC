@@ -61,6 +61,10 @@ O HEAD é um pointer especial que indica em que branch você está naquele momen
 fast-forward merge ocorre quando é possível fazer o merge de duas branches que são parentes diretas na árvore, por exemplo, a master branch e um hotfix rápido. Dessa forma git apenas aponta a master branch direto para a branch hotfix, já que não existe outros commits diferentes no meio entre os dois.
 Já o merge commit ocorre quando as branches não são parentes diretos, ou seja, existem modificações nas duas. Então o git vai criar um novo commit (snapshot) que vai representar o merge das modificações das duas. Esse commit é conhecido por merge commit.
 
+## O que é tracking branch e upstream branch?
+
+tracking branch é uma branch que aponta para uma branch remota, essa branch remota é conhecida como "upstream branch". Quando a branch tem uma upstream ao usar o comando git pull ou git push o git já sabe de onde puxar ou enviar os commits do código.
+
 # Commands
 
 ## Configuration
@@ -128,6 +132,7 @@ git commit --amend # permite substituir o último commit caso tenha esquecido de
 ```bash
 # Mostra o histórico de commits
 git log
+git log --oneline
 git log -2 # Mostra apenas os dois últimos commits
 git log -p # Mostra as mudanças que ocorreram no commit
 git log --stat # Mostra as estatíticas do commit
@@ -154,6 +159,7 @@ git remote add <shortname> <url> # Adiciona um novo repositório remoto (usar fe
 git remote show <remote>
 git remote rename <remote> <new-shortname>
 git remote remove <remote>
+git fetch --all
 git fetch <remote> # Pega os dados do repositório remoto que você não tem (não faz o merge)
 git pull # Puxa os dados do repositório remoto daquela branch (se tiver) (faz o merge)
 git push <remote> <branch> # Envia seus commits para o repositório remoto
@@ -178,21 +184,16 @@ git push origin --delete <tagname> # Deleta tag do repositório remoto
 ```bash
 git branch # Shows list of branches
 git branch -v # Shows last commit on branch
+git branch -vv # Shows upstream branches
 git branch --merged # shows list of branches tat you didnt merge
 git branch <branch-name> # Create branch
 git branch -d <branch-name> # Deleta branch
 git branch --move <old-branch-name> <new-branch-name> # Changes branch name
+git branch -set-upstream-to <remote-branch>
+git checkout -b <new-branch> <remote-branch> # Cria uma branch que faz o tracking de remote-branch
 git merge <branch-name> # Merge the current HEAD->Branch to the <branch-name>
 
 git checkout <branch-name> # Moves HEAD to branch-name
 git checkout -b <branch-name> # Create and moves HEAD to branch-name
-```
-
-```bash
-
-git push
-git branch
-git checkout -b [nova-branch] [tracking-branch]
-git checkout [branch]
-git merge [branch-to-be-merged-to-current-branch]
+git checkout -b <branch-name> <remote> # Cria uma branch que aponta para a branch remota~
 ```
