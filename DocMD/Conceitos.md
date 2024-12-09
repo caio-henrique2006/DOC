@@ -61,5 +61,5 @@ Shell é o programa que atua como a interface entre o usuário e o Kernel de um 
 - **Peripheral**: dispositivos menores, com menos gasto energético que se conectam a um Central
 - **Central**: dispositivo central que se conecta com o Peripheral.
 - **advertising**: é o processo de transmitir a disponibilidade de conexão ou a própria conexão.
-- **GATT**: 
+- **GATT**: Generic ATTribute, definição de protocolo de tranferência de dados enrte dois BLE dispositivos. O periférico fica conhecido como GATT Server e o Central como GATT Client. As transações GATT se montam em profiles, services e characteristics. Profiles são coleções de serviços, serviços dividem dados em características e características são pontos isolados de dado.
 

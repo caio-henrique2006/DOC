@@ -15,3 +15,12 @@ scp -r <pc_directory_abs_path> <user>@<ip>:<raspberry_abs_path> # Enviar diretó
 scp <user>@<ip>:<raspberry_abs_path> <pc_file_abs_path> # Enviar arquivo
 scp -r <user>@<ip>:<raspberry_abs_path> <pc_directory_abs_path> # Enviar diretório
 ```
+
+## Bluetooth commands:
+
+```shell
+bluetoothctl # inicia modo bluetooth
+power on # liga o adaptador bluetooth
+menu advertise # mostra opções de configuração do advertise
+advertise on # se mostra visível para conexões
+```
