@@ -65,6 +65,20 @@ Já o merge commit ocorre quando as branches não são parentes diretos, ou seja
 
 tracking branch é uma branch que aponta para uma branch remota, essa branch remota é conhecida como "upstream branch". Quando a branch tem uma upstream ao usar o comando git pull ou git push o git já sabe de onde puxar ou enviar os commits do código.
 
+## Diferença entre merge e rebase
+
+Merge pega as duas branches e as transformam em um novo commit. Já rebase pega uma das branch e aplica as modificações da outra, criando um novo commit que transforma o histórico de commits em algo mais linear.
+
+## Git distributed workflows:
+
+### Centralized workflow:
+
+Existe apenas uma branch (main ou master) e todos os desenvolvedores commitão nela.
+
+### Integration-Manager workflow:
+
+Em integration-manager, existe uma pessoa responsável por manter o repositório, os outros desenvolvedores clonam desse repositório e fazem suas modificações, quando suas modificações puderem ser adicionadas, o integration-manager acessa a branch ou o fork desse desenvolvedor e testa localmente. Depois ele faz o commit para o repositório principal, atualizando ele com o código do desenvolvedor.
+
 # Commands
 
 ## Configuration
@@ -192,6 +206,7 @@ git branch --move <old-branch-name> <new-branch-name> # Changes branch name
 git branch -set-upstream-to <remote-branch>
 git checkout -b <new-branch> <remote-branch> # Cria uma branch que faz o tracking de remote-branch
 git merge <branch-name> # Merge the current HEAD->Branch to the <branch-name>
+git rebase <branch-name> # Limpa o histórico ao transformar o merge commit em um caminho linear.
 
 git checkout <branch-name> # Moves HEAD to branch-name
 git checkout -b <branch-name> # Create and moves HEAD to branch-name
