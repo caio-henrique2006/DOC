@@ -74,7 +74,7 @@ class MLP:
                 self.gradient_descent(learning_rate)
                 sum_error += self._mse(target, output)
             # report error
-            # print("Error: {} at epoch {}".format(sum_error/len(inputs), i))
+            print("Error: {} at epoch {}".format(sum_error/len(inputs), i))
 
 
     def _mse(self, target, output):
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     # train out mlp
     mlp.train(inputs, targets, 100, 0.1)
     # Dummy data:
-    input = np.array([0.3, 0.3])
+    input = np.array([0.3, 0.2])
     target = np.array([0.4])
     output = mlp.forward_propagate(input)
     print()
