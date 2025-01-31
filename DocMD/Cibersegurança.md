@@ -34,3 +34,23 @@ Is a list of how to go through cetain detections, and what it needs to be look t
 - Security frameworks are guidelines for building plans to mitigate risk.
 - Security controls are safeguards designed to reduce risk.
 - Security posture is an organization's ability to secure assets and data and respond to threats.
+
+# What is a SIEM tool ?
+
+They are security of information and event management tools used to automate threat detections and others unusual things that may represent a security risk.
+
+# What is Intrusion detection systems (IDSs) ?
+
+They are software used to detect possible unathourized access to a network or intrusion.
+
+# What is computer forensis ?
+
+Is the area that studies the ways of investiganting, finding and preserving evidences in networks and electronic devices.
+
+# What is Personally Indentifiable Information (PII) ?
+
+Is any information that can be used to identify a person's identity.
+
+# What is Sensitive Personally identifiable Information (SPII) ?
+
+Is any type of PII that falls under some specific stricter guideline, that can represent a greater threat to the source of the information.
