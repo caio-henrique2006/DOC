@@ -134,3 +134,55 @@ Is an attack where the threat actor studies a persons social media before attack
 # What is Watering hole attack ?
 
 Is an Social engineering attack that consists of exploiting a site frequently visited by specific users.
+
+# What are security domains ?
+
+Security domains is way the area of cybersecurity is divided. There are 8 in total.
+
+# Define the domain: Security and risk management
+
+This domain defines the security goals and objetives with the intent of risk mitigation, compliance, business continuity and the law.
+
+# Define the domain: Asset security
+
+Secures digital and physical assets, is related to storage, maintanence and destruction of data. Secures the ownership of an business.
+
+# Define the domain: Security architeture and engineering
+
+Optimizes data security by ensuring effective tools, systems and process are in place.
+
+# Define the domain: Communication and network secutiry
+
+Manage and secure physical networks and wireless communications.
+
+# Define the domain: identity and access management
+
+Ensure the users follow established policies to control and manage physical and logical assets.
+
+# Define the domain: Security Assessments and Testing
+
+Confuct secure test, analyze data and conduct security audits.
+
+# Define the domain: Security Operations
+
+Conduct investigations and preventative measures
+
+# Define the domain: Software development security
+
+Secure coding practices, to create secure applications and services.
+
+# What is the Adversarial artificial intelligence attack ?
+
+Is and attack that consists of manipulating IAs so they can act in specific damaging ways
+
+# What is a supply-chain attack ?
+
+Exploits a vulnerability on some service, application or system and causes damage to a suply chain of a product.
+
+# What defines an Advanced persistent threats threat actor?
+
+They are expertise threat actors that study their victims before attacking, they can stay undetected for a very long time and usually try to damage the victim or gain access of useful information.
+
+# What defines a Hacktivists threat actor ?
+
+Is a threat actor that is driven by a political agenda, that breaches a system with the intent of demonstrating, propaganga, social change campaigns and fame.
