@@ -186,3 +186,24 @@ They are expertise threat actors that study their victims before attacking, they
 # What defines a Hacktivists threat actor ?
 
 Is a threat actor that is driven by a political agenda, that breaches a system with the intent of demonstrating, propaganga, social change campaigns and fame.
+
+# What are security frameworks and its 4 components ?
+
+Security framworks are guidelines used for building plans to mitigate risk.
+
+1. Identifying and documenting security goals.
+2. Setting guidelines to achieve the goals.
+3. Implementing strong security processes.
+4. Monitoring and communicating results.
+
+# What are security controls ?
+
+Security controls are safeguards designed to reduce specific security risks.
+
+# What is the CIA triad ?
+
+A foundational model that helps organizations plan their security policies that means CIA (Confidentiality, Avaliability and Integrity). "Data protected by CIA triad".
+
+# What is an asset ?
+
+Anything that has value to an organization.
