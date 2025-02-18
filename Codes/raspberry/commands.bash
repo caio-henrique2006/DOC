@@ -13,3 +13,6 @@ menu gatt
 register-service uuid
 register-characteristic 0x1234 read
 register-characteristic 0x4567 read,write
+
+sudo hciconfig hci0 up # Liga o dispositivo bluetooth 0
+sudo hciconfig hci0 piscan # Determina o dispositivo bluetooth como advertise e conect ao mesmo tempo
