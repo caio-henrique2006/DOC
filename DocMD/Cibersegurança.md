@@ -35,10 +35,6 @@ Is a list of how to go through cetain detections, and what it needs to be look t
 - Security controls are safeguards designed to reduce risk.
 - Security posture is an organization's ability to secure assets and data and respond to threats.
 
-# What is a SIEM tool ?
-
-They are security of information and event management tools used to automate threat detections and others unusual things that may represent a security risk.
-
 # What is Intrusion detection systems (IDSs) ?
 
 They are software used to detect possible unathourized access to a network or intrusion.
@@ -186,3 +182,41 @@ They are expertise threat actors that study their victims before attacking, they
 # What defines a Hacktivists threat actor ?
 
 Is a threat actor that is driven by a political agenda, that breaches a system with the intent of demonstrating, propaganga, social change campaigns and fame.
+
+# What are security frameworks and its 4 components ?
+
+Security framworks are guidelines used for building plans to mitigate risk.
+
+1. Identifying and documenting security goals.
+2. Setting guidelines to achieve the goals.
+3. Implementing strong security processes.
+4. Monitoring and communicating results.
+
+# What are security controls ?
+
+Security controls are safeguards designed to reduce specific security risks.
+
+# What is the CIA triad ?
+
+A foundational model that helps organizations plan their security policies that means CIA (Confidentiality, Avaliability and Integrity). "Data protected by CIA triad".
+
+# What is an asset ?
+
+Anything that has value to an organization.
+
+# What is a log ?
+
+A record of events that happens in a system.
+
+# What is a SIEM tool ?
+
+SIEM (Security Information and Event Management)
+They are security of information and event management tools used to automate threat detections and others unusual things that may represent a security risk. They collect and analyze log data para monitorar atividades críticas.
+
+# Network protocol analyzer (packet sniffer) ?
+
+A tool designed to capture and analyze data traffic through the network.
+
+# What is order of volatility ?
+
+Is a sequence outlining the order of the data that must be preserved first in an forensis investigation for example.
