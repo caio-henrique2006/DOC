@@ -16,3 +16,5 @@ register-characteristic 0x4567 read,write
 
 sudo hciconfig hci0 up # Liga o dispositivo bluetooth 0
 sudo hciconfig hci0 piscan # Determina o dispositivo bluetooth como advertise e conect ao mesmo tempo
+
+sudo systemctl status bluetoothc # Checa se o bluetooth está funcionando no raspberry
