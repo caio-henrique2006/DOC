@@ -220,3 +220,5 @@ A tool designed to capture and analyze data traffic through the network.
 # What is order of volatility ?
 
 Is a sequence outlining the order of the data that must be preserved first in an forensis investigation for example.
+
+# Risk Management
