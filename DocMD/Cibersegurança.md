@@ -221,4 +221,9 @@ A tool designed to capture and analyze data traffic through the network.
 
 Is a sequence outlining the order of the data that must be preserved first in an forensis investigation for example.
 
-# Risk Management
+# What is encription, authentication and authorization ?
+
+They are security controls.
+Encrition is the act of encripting data so it cant be acessed without a decription key.
+authentication is the act of insuring someone is who they say they are.
+authorization is to check if someone has access to something.
