@@ -45,22 +45,19 @@ result = subprocess.run([])
 ```python
 import subprocess
 
-# Used to sens a command to a process
-def send_command(command):
+process = subprocess.Popen(["bluetoothctl"], stdin=subprocess.PIPE, stdout=subproc># Used to send a command to a process
+def send_command(process, command):
     process.stdin.write(command + "\n")
     process.stdin.flush()
-    # Read the output line by line
-    output = []
-    while True:
-        line = process.stdout.readline()
-        if not line.strip():  # Stop reading if the line is empty
-            break
-        output.append(line.strip())
-    return output
 
 # Start bluetoothctl in interactive mode
-process = subprocess.Popen(["bluetoothctl"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+send_command(process, "menu advertise")
+send_command(process, 'name "armalpha"')
+send_command(process, 'back')
+send_command(process, "advertise on")
+input()
 
-response = send_command("advertise on")
-print(response)
+out, err = process.communicate()
+print(out, err);
+
 ```
