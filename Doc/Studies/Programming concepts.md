@@ -17,3 +17,8 @@ Item
     sequelize.close();
   });
 ```
+
+# O que é PostgreeSQL?
+
+PostgreeSQL é um banco de dados relacional muito utilizado e com um grande suporte da comunidade. Sua origem data de 1987.
+PostgreeSQL tem features mais versáteis do que outros modelos de banco de dados relacional, podendo armazenar tipos diferentes de dados como JSON, Arrays, Matrizes e outros, além de permitir a criação de próprios tipos. É dito como um banco de dados object-relational porque permite features com objetos.
