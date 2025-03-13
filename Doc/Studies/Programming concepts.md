@@ -22,3 +22,23 @@ Item
 
 PostgreeSQL é um banco de dados relacional muito utilizado e com um grande suporte da comunidade. Sua origem data de 1987.
 PostgreeSQL tem features mais versáteis do que outros modelos de banco de dados relacional, podendo armazenar tipos diferentes de dados como JSON, Arrays, Matrizes e outros, além de permitir a criação de próprios tipos. É dito como um banco de dados object-relational porque permite features com objetos.
+
+# O que é um singleton?
+
+Um singleton é um padrão de design que garante apenas que exista uma instância de uma classe. Ele tem resolve dois problemas:
+
+- Garante a existência de apenas uma instância de uma classe.
+- Fornece um ponto de acesso global a essa instância.
+
+Muito usado para garantir o controle sobre o acesso de um recurso compartilhado como um arquivo ou um banco de dados. Entretanto viola SRP, precisa de tratamento especial quando necessidade de multi-threading e pode ser dificil de testar.
+
+### Como implementar:
+
+```python
+'''
+1. Make the default constructor private, to prevent other objects from using the new operator with the Singleton class.
+2. Create a static creation method that acts as a constructor. Under the hood, this method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.
+'''
+
+
+```
