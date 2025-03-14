@@ -40,9 +40,4 @@ Muito usado para garantir o controle sobre o acesso de um recurso compartilhado 
 2. Create a static creation method that acts as a constructor. Under the hood, this method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.
 '''
 
-Iai man, fiquei sabendo que vc saiu da Smart.
-
-Fico triste, pq desde que eu entre lá você foi o cara que eu mais me senti apoiado e confortável, vou sentir sua falta man, dos papo de jogo e das zoeira. Mas vida que segue, força.
-
-O discord vai tá sempre aberto se tu quiser mandar um papo e jogar, e qualquer coisa de programação até fazer um projeto nós dois só falar.
 ```
