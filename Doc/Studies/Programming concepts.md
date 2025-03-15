@@ -39,5 +39,50 @@ Muito usado para garantir o controle sobre o acesso de um recurso compartilhado 
 1. Make the default constructor private, to prevent other objects from using the new operator with the Singleton class.
 2. Create a static creation method that acts as a constructor. Under the hood, this method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.
 '''
+# https://refactoring.guru/design-patterns/singleton/python/example#example-0
+class SingletonMeta(type):
+    """
+    The Singleton class can be implemented in different ways in Python. Some
+    possible methods include: base class, decorator, metaclass. We will use the
+    metaclass because it is best suited for this purpose.
+    """
+
+    _instances = {}
+
+    def __call__(cls, *args, **kwargs):
+        """
+        Possible changes to the value of the `__init__` argument do not affect
+        the returned instance.
+        """
+        if cls not in cls._instances:
+            instance = super().__call__(*args, **kwargs)
+            cls._instances[cls] = instance
+        return cls._instances[cls]
+
+
+class Singleton(metaclass=SingletonMeta):
+    def some_business_logic(self):
+        """
+        Finally, any singleton should define some business logic, which can be
+        executed on its instance.
+        """
+
+        # ...
+
+
+if __name__ == "__main__":
+    # The client code.
+
+    s1 = Singleton()
+    s2 = Singleton()
+
+    if id(s1) == id(s2):
+        print("Singleton works, both variables contain the same instance.")
+    else:
+        print("Singleton failed, variables contain different instances.")
 
 ```
+
+# CORS (Cross-origin Resource Sharing)
+
+https://aws.amazon.com/what-is/cross-origin-resource-sharing/?nc1=h_ls
