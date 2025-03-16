@@ -86,3 +86,15 @@ if __name__ == "__main__":
 # CORS (Cross-origin Resource Sharing)
 
 https://aws.amazon.com/what-is/cross-origin-resource-sharing/?nc1=h_ls
+
+Nos primórdios da internet era muito comum os casos de CSRF(Cross-Site Request Forgery), em um threat actor mandava uma requisição falsa para outro servidor usando os cookies de credenciais de um usuário. Para corrigir isso todos os browsers adotaram o same-origin, ou seja, toda requisição a um servidor só poderia ser feita se ela tivesse sido feita na mesma origem. Entretanto, same-origin é pouco flexível para utilização de APIs de terceiros, por esse motivo existe o mecanismo CORS (Cross-origin Resource Sharing) que permite um servidor observar se a origem de uma requisição é válida.
+
+### CORS Preflight:
+
+Quando uma requisição a um servidor é considerada "complexa" ou de "risco" o browser manda primeiro uma requisição de confirmação para o servidor, que devolve as seguintes configurações:
+
+- Access-Control-Allow-Methods
+- Access-Control-Allow-Headers
+- Access-Control-Allow-Origin
+
+Essas configurações indicam os métodos (GET, POST, DELETE), Headers (Content-type, Authorization) e Origem (www.new.com) permitidos pelo servidor. Caso a requisição não obedeça essas configurações ela gera um erro.
