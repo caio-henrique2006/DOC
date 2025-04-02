@@ -8,7 +8,17 @@
 
 ## New Input System (input actions)
 
-- links: [https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Touch.html], []
+### Links:
+
+- Workflow: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/Workflow-Actions.html
+- Conceitos: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/Concepts.html
+- QuickStart guide: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/QuickStartGuide.html
+
+### Concepts:
+
+- **Action maps**: Conjunto de Actions que fazem sentido juntos (é arbitrário).
+- **Action**: Abstração de alto nível, simplesmente significa a ação que deve ser executada quando algum input acontece. É independente do input. Pode ser pular, correr, interagir, atacar.
+- **Binding**: Conexão entre uma ação (action) e um ou mais inputs do sistema. Depende do input.
 
 When using the new input system you can use either the interactive **input actions**, or you can use the API called **EnhancedTouch**.
 
@@ -56,40 +66,6 @@ private void FingerDown(Finger finger) {
 Lembre-se que o **input debugger** é necessário para testar com o mouse o sistema de touch:
 
 - window -> Analysis -> Input Debugger -> Options -> Simulate touch from the mouse or pen
-
-```c#
-// Importando
-using UnityEngine.InputSystem;
-
-// Instanciando
-private Touch touchControls;
-
-// Iniciando o inputSystem antes de todos os outros processos:
-private void Awake() {
-    touchControls = new Touch();
-}
-
-// Lembre de Enable e Disable o sistema:
-private void onEnable()
-{
-    touchControls.Enable();
-}
-
-private void onDisable()
-{
-    touchControls.Disable();
-}
-
-// Criando uma resposta do sistema de input
-private void Start() {
-    touchControls.[input_map].[input_action].started += ctx => onAction(ctx);
-}
-
-private void onAction (InputAction.CallbackContext context) {
-    // can do some actions and get values with context
-    Debug.Log(context.ReadValue<float>());
-}
-```
 
 ## Código:
 
