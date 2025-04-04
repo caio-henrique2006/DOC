@@ -10,15 +10,16 @@
 
 ### Links:
 
-- Workflow: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/Workflow-Actions.html
-- Conceitos: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/Concepts.html
-- QuickStart guide: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/QuickStartGuide.html
+- Written tutorials: https://gamedevbeginner.com/input-in-unity-made-easy-complete-guide-to-the-new-system/
 
 ### Concepts:
 
+- **Middle Step**: There is a middle step before the functions that executes the actions, so that it is possible to change the input of it.
 - **Action maps**: Conjunto de Actions que fazem sentido juntos (é arbitrário).
 - **Action**: Abstração de alto nível, simplesmente significa a ação que deve ser executada quando algum input acontece. É independente do input. Pode ser pular, correr, interagir, atacar.
 - **Binding**: Conexão entre uma ação (action) e um ou mais inputs do sistema. Depende do input.
+- **Control Scheme**: Esquema de controles para dispositivos diferentes (Controle, teclado). Permite diferenciar de onde vem as entradas.
+- **Usages controls**: Usages controls let yourself assign controls that are usually binded to certain inputs on different devices, like the "back" action only is put on the "Circle", "B" and "Escape" on different devices
 
 When using the new input system you can use either the interactive **input actions**, or you can use the API called **EnhancedTouch**.
 
@@ -36,6 +37,14 @@ private void onDisable()
     TouchSimulation.Disable();
 }
 ```
+
+### Input actions:
+
+É necessário primeiro configurar um arquivo **input action** para definir as opções de input e depois gerar o código c# correspondente pelo inspetor.
+
+Lembre-se que o **input debugger** é necessário para testar com o mouse o sistema de touch:
+
+- window -> Analysis -> Input Debugger -> Options -> Simulate touch from the mouse or pen
 
 ### EnhancedTouch:
 
@@ -58,14 +67,6 @@ private void FingerDown(Finger finger) {
     if (OnStartTouch != null) OnStartTouch(finger.screenPosition, Time.time);
 }
 ```
-
-### Input actions:
-
-É necessário primeiro configurar um arquivo **input action** para definir as opções de input e depois gerar o código c# correspondente pelo inspetor.
-
-Lembre-se que o **input debugger** é necessário para testar com o mouse o sistema de touch:
-
-- window -> Analysis -> Input Debugger -> Options -> Simulate touch from the mouse or pen
 
 ## Código:
 
@@ -120,44 +121,4 @@ Instantiate(GameObject, coordinates, rotation);
 
 ```c#
 transform.GetChild(index)
-```
-
-### Using the new Input System
-
-```c#
-// Importando
-using UnityEngine.InputSystem;
-
-// Instanciando
-private Touch touchControls;
-
-// Iniciando o inputSystem antes de todos os outros processos:
-private void Awake() {
-    touchControls = new Touch();
-}
-
-// Lembre de Enable e Disable o sistema:
-private void onEnable()
-{
-    touchControls.Enable();
-}
-
-private void onDisable()
-{
-    touchControls.Disable();
-}
-
-// Criando uma resposta do sistema de input
-private void Start() {
-    touchControls.[input_map].[input_action].started += ctx => onAction(ctx);
-}
-
-private void onAction (InputAction.CallbackContext context) {
-    // can do some actions and get values with context
-    Debug.Log(context.ReadValue<float>());
-}
-```
-
-```
-
 ```
