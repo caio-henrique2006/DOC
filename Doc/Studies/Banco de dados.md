@@ -18,7 +18,30 @@ Atomic means a transaction is really specific, affects little. Isolated permits 
 
 The 4 isolation levels are a series of phenomenous when doing a transaction that can or cant happen in every isolation level. They define if its possible to read uncommited transactions, re-read data that had been modified and others. The default for PostgreeSQL is "read commited" which means it reads other transactions changes after they are commited.
 
+### Stored procedures
+
+Stored procedures are server-side functions on the server of PostgreSQL that can store queries to be reused in code.
+
+### Database dump
+
+Um backup de um banco de dados
+
 # Code
+
+### PostgreeSQL psql commands
+
+```bash
+\l # Lista todos os bancos de dados
+\c database_name; # Conecta um banco de dados
+\dt # Lista as tabelas do banco de dados
+\d # Observa o esquema de uma tabela
+```
+
+### Examples
+
+```SQL
+
+```
 
 ### Util
 
