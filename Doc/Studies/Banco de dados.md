@@ -28,6 +28,12 @@ Um backup de um banco de dados
 
 # Code
 
+### Import and Export DB PostgreSQL
+
+```bash
+psql -U user_name -d db_name -f "file_absolute_path"
+```
+
 ### PostgreeSQL psql commands
 
 ```bash
