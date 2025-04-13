@@ -26,6 +26,14 @@ Stored procedures are server-side functions on the server of PostgreSQL that can
 
 Um backup de um banco de dados
 
+### Join Statements in SQL
+
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+![join statement](../../img/join%20statement.png)
+
 # Code
 
 ### Import and Export DB PostgreSQL
@@ -46,7 +54,9 @@ psql -U user_name -d db_name -f "file_absolute_path"
 ### Examples
 
 ```SQL
-
+-- Join
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+LEFT JOIN album USING(artistid);
 ```
 
 ### Util
