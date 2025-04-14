@@ -98,3 +98,7 @@ Quando uma requisição a um servidor é considerada "complexa" ou de "risco" o 
 - Access-Control-Allow-Origin
 
 Essas configurações indicam os métodos (GET, POST, DELETE), Headers (Content-type, Authorization) e Origem (www.new.com) permitidos pelo servidor. Caso a requisição não obedeça essas configurações ela gera um erro.
+
+# REPL (Read-Eval-Print-Loop)
+
+É um ambiente simples de programação para validação de códigos printando os resultados, muito usado para debbuging e test.

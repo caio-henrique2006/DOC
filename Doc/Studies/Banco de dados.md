@@ -49,6 +49,7 @@ psql -U user_name -d db_name -f "file_absolute_path"
 \c database_name; # Conecta um banco de dados
 \dt # Lista as tabelas do banco de dados
 \d # Observa o esquema de uma tabela
+\set ECHO_HIDDEN true # Mostra as Query SQL escondidas nos comandos.
 ```
 
 ### Examples
