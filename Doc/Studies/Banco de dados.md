@@ -4,12 +4,6 @@
 - **Never** build a query string by concatenating your query arguments directly into your query strings, beacause of SQL Injection.
 - SQL can be used to accelerate "business logic" having the SQL query handles parts of it, instead of making simple queries that need to be repeated.
 
-# Conceitos
-
-### SQL Injection
-
-SQL Injection is a security breach where a query sintax in SQL is mistakingly not considered a dinamic argument and executes even though it should not.
-
 ### Transaction, Atomic, Consistent, Isolated, Durable
 
 Atomic means a transaction is really specific, affects little. Isolated permits that a database has online backups. Consistent means it doesnt change with time and durable means that whatever happens the database will be intact.
