@@ -28,12 +28,29 @@ RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched re
 FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
 ![join statement](../../img/join%20statement.png)
 
+### Database Indexing
+
+Indexing is a data modeling strategy to sort with pointer the rows of a table so it can be faster to find certain data inside it. Like sorting alphabetically.
+
 # Code
 
 ### Import and Export DB PostgreSQL
 
 ```bash
 psql -U user_name -d db_name -f "file_absolute_path"
+```
+
+### PostgreSQL indexing
+
+```SQL
+-- When a database is created a clustered index is created on the primary key. Any other index you create is called a Non-clustered index.
+-- When new data is put inside the DB the index takes time to update, so usually indexes are more usuable in rare changing tables.
+-- Create index
+CREATE INDEX friends_name_asc ON friends(name ASC);
+-- Test the velocity of the query
+EXPLAIN ANALYZE SELECT * FROM friends WHERE name = 'Blake';
+-- Delete index
+DROP INDEX friends_name_asc;
 ```
 
 ### PostgreeSQL psql commands
