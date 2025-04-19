@@ -30,7 +30,9 @@ FULL (OUTER) JOIN: Returns all records when there is a match in either left or r
 
 ### Database Indexing
 
-Indexing is a data modeling strategy to sort with pointer the rows of a table so it can be faster to find certain data inside it. Like sorting alphabetically.
+Indexing is a data modeling strategy to sort with pointer the rows of a table so it can be faster to find certain data inside it. Like sorting alphabetically. Cluster index are those that come from automatic by the primary keys and unique constraints. Non-Cluster are the ones defined by us. In postgreSQL is possible to define the algorithm that will be used in the index.
+
+### Amdahl`s law
 
 # Code
 
@@ -47,7 +49,7 @@ psql -U user_name -d db_name -f "file_absolute_path"
 -- When new data is put inside the DB the index takes time to update, so usually indexes are more usuable in rare changing tables.
 -- Create index
 CREATE INDEX friends_name_asc ON friends(name ASC);
--- Test the velocity of the query
+-- Test the velocity of the query (analyze, verbose, buffers)
 EXPLAIN ANALYZE SELECT * FROM friends WHERE name = 'Blake';
 -- Delete index
 DROP INDEX friends_name_asc;
