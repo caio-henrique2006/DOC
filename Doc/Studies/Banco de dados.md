@@ -3,6 +3,7 @@
 - SQL é uma linguagem de programação declarativa de domínio específico.
 - **Never** build a query string by concatenating your query arguments directly into your query strings, beacause of SQL Injection.
 - SQL can be used to accelerate "business logic" having the SQL query handles parts of it, instead of making simple queries that need to be repeated.
+- Always put SQL code inside an .sql file.
 
 ### Transaction, Atomic, Consistent, Isolated, Durable
 
@@ -33,6 +34,14 @@ FULL (OUTER) JOIN: Returns all records when there is a match in either left or r
 Indexing is a data modeling strategy to sort with pointer the rows of a table so it can be faster to find certain data inside it. Like sorting alphabetically. Cluster index are those that come from automatic by the primary keys and unique constraints. Non-Cluster are the ones defined by us. In postgreSQL is possible to define the algorithm that will be used in the index.
 
 ### Amdahl`s law
+
+### Areas of SQL
+
+DML - Data Manipulation Language: Insert, Update and Delete.
+DDL - Data Definition Language: Create, Alter and Drop.
+TCL - Transaction Control Language: Begin, Commit, Transaction commands.
+DCL - Data Control Language: Grant and Revoke.
+Query - Select, table, values and with.
 
 # Code
 
@@ -71,6 +80,10 @@ DROP INDEX friends_name_asc;
 -- Join
 INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 LEFT JOIN album USING(artistid);
+-- Limit
+select * from races limit 1;
+-- as
+select quantity as coins from pigbank;
 ```
 
 ### Util
@@ -80,5 +93,8 @@ coalesce(element, 0) -- Retorna o primeiro argumento que não seja NULL.
 cast(element as date) -- Transforma o element no tipo dito como "as".
 
 -- PostgreSQL Only:
+
+-- generate_series(start, stop, step)
+
 
 ```
