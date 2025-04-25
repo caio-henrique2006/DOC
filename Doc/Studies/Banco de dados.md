@@ -84,6 +84,9 @@ LEFT JOIN album USING(artistid);
 select * from races limit 1;
 -- as
 select quantity as coins from pigbank;
+-- in, not in, not exist
+select title, count(*) from track join album using (album_id) where title in ('Balls to the Wall', 'Restless and Wild') group by title;
+
 ```
 
 ## Util
@@ -134,4 +137,4 @@ from generate_series(date '2000-01-01',
     as t(date);
 ```
 
-select name, count(\*) as appearance from track join playlist_track using(track_id) where track.track_id = playlist_track group by name order by appearance asc limit 3;
+select first_name from customer join invoice
