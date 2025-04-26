@@ -86,7 +86,14 @@ select * from races limit 1;
 select quantity as coins from pigbank;
 -- in, not in, not exist
 select title, count(*) from track join album using (album_id) where title in ('Balls to the Wall', 'Restless and Wild') group by title;
-
+-- order by
+order by name asc, number desc, ... -- order by can take multiple orders.
+-- case when then else end
+order by
+        case when left(name, 1) in ('A', 'E', 'I', 'O', 'U') -- Um if else
+                then 1
+                else 2
+        end
 ```
 
 ## Util
@@ -111,7 +118,12 @@ select num, num+3 as soma from generate_series(1, 5) as num;
 ## Util PostgreeSQL only
 
 ```SQL
-
+-- explain
+EXPLAIN SELECT ... -- Explain before any query will show the postgreSQL plan
+explain (costs off, buffers, analyze) select ...
+-- point, <->
+order by point(lng, lat) <-> point(2.349014, 48.864716) -- <-> operator for getting the distance between then
+-- point is a datastructure in PostgreeSQL.
 ```
 
 ## Others
@@ -137,4 +149,10 @@ from generate_series(date '2000-01-01',
     as t(date);
 ```
 
-select first_name from customer join invoice
+select
+name, composer
+from
+track
+order by
+name desc
+limit 20;
