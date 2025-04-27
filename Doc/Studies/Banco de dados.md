@@ -51,6 +51,24 @@ Query - Select, table, values and with.
 psql -U user_name -d db_name -f "file_absolute_path"
 ```
 
+## Pagination
+
+```SQL
+-- offset is inneficient in big tables, so its better to use keyset even though you need to remember the last row.
+-- offset
+SELECT *
+FROM your_table
+ORDER BY id
+LIMIT 20 OFFSET 40; -- jumps the 40 first rows, but skips going through then which make it slow
+
+-- keyset
+SELECT *
+FROM your_table
+WHERE id > 50  -- key set part
+ORDER BY id
+LIMIT 10;
+```
+
 ## PostgreSQL indexing
 
 ```SQL
@@ -94,6 +112,26 @@ order by
                 then 1
                 else 2
         end
+-- with
+with decades as -- Creates a "variable"
+(
+   select extract('year' from date_trunc('decade', date)) as decade
+     from races
+ group by decade
+)
+select name, ... from decades
+-- Lateral join
+...
+FROM
+  users
+LEFT JOIN LATERAL ( -- Lateral means that the subquery can use rows from the left table.
+  SELECT item
+  FROM orders
+  WHERE orders.user_id = users.id
+  LIMIT 1
+) ord ON true;
+-- Row
+WHERE ROW(first_name, last_name) = ROW('John', 'Doe'); -- Comparing various variables at the same time.
 ```
 
 ## Util
