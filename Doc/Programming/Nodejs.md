@@ -10,6 +10,17 @@ Node JS é um ambiente de execução de código javascript que utiliza do poder 
 
 É o administrador de pacotes padrão do node JS. Ele serve para administrar as dependências de projetos.
 
+### Enviroment variables
+
+São variáveis colocadas em um arquivo .env para serem carregadas no programa. Em node.js é comum usar a biblioteca "dotenv" para esse tipo de trabalho.
+O nome do arquivo deve ser exatamente: ".env" e o script deve iniciar com:
+
+```js
+require("dotenv").config();
+// OU
+require("dotenv").config({ path: "./ini.env" }); // Quando o arquivo não é apenas .env.
+```
+
 ## Código
 
 ### NPM commands:
