@@ -43,6 +43,10 @@ TCL - Transaction Control Language: Begin, Commit, Transaction commands.
 DCL - Data Control Language: Grant and Revoke.
 Query - Select, table, values and with.
 
+## Window Functions
+
+Funções especiais que executam um cálculo para várias linhas de uma tabela. Diferente de aggregate, ela não colapsa as linhas, gerando um valor para cada linha.
+
 # Code
 
 ## Import and Export DB PostgreSQL
@@ -67,6 +71,25 @@ FROM your_table
 WHERE id > 50  -- key set part
 ORDER BY id
 LIMIT 10;
+```
+
+## Window Function
+
+```SQL
+-- Rank
+SELECT
+  employee_id,
+  department_id,
+  salary,
+  RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) AS dept_rank
+FROM employees;
+select
+    name,
+    unit_price,
+    rank() over (order by unit_price ASC)
+from
+    track
+limit 100;
 ```
 
 ## PostgreSQL indexing
@@ -132,6 +155,10 @@ LEFT JOIN LATERAL ( -- Lateral means that the subquery can use rows from the lef
 ) ord ON true;
 -- Row
 WHERE ROW(first_name, last_name) = ROW('John', 'Doe'); -- Comparing various variables at the same time.
+-- having
+group by status
+  having count(*) >= 10 -- Its like a where but for the group by clause.
+
 ```
 
 ## Util
@@ -186,11 +213,3 @@ from generate_series(date '2000-01-01',
                     interval '1 year')
     as t(date);
 ```
-
-select
-name, composer
-from
-track
-order by
-name desc
-limit 20;
