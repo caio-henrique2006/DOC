@@ -1,5 +1,27 @@
 # Python
 
+## Concorrencia
+
+### multiprocessing package
+```python
+from multiprocessing import Pool
+import time
+
+# Save timestamp
+start = time.time()
+
+def f(x):
+    return x*x
+
+if __name__ == '__main__':
+    with Pool(5) as p:
+        print(p.map(f, [1, 2, 3]))
+
+end = time.time()
+
+print("Time elapsed: ", end - start)
+```
+
 ## files
 
 ### get file names

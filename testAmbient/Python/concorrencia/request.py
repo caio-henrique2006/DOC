@@ -1,17 +1,20 @@
-import os
-import requests
 from multiprocessing import Pool
- 
-urls = (
-    'http://www.americanas.com',
-    'http://www.submarino.com',
-    'http://www.shoptime.com',
-    'http://www.soubarato.com',
-)
- 
-def get_and_print(url):
+import time
+import requests
+
+def f(url):
     response = requests.get(url)
-    print(response.text)
- 
-pool = Pool(processes=os.cpu_count())
-pool.map(get_and_print, urls)
+    return response.text
+
+if __name__ == '__main__':
+    start = time.time()
+    urls = [
+        'http://www.americanas.com',
+        'http://www.submarino.com',
+        'http://www.shoptime.com',
+        'http://www.soubarato.com',
+    ]
+    with Pool(5) as p:
+        print(p.map(f, urls))
+    end = time.time()
+    print("Time elapsed: ", end - start)
