@@ -32,6 +32,36 @@ Lembre-se que o **input debugger** é necessário para testar com o mouse o sist
 
 ## Snippets:
 
+### Example keyboard code:
+
+```c#
+    private PlayerInput playerInput;
+    private InputAction jumpAction;
+    private InputAction moveAction;
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        jumpAction = playerInput.actions["Jump"];
+        moveAction = playerInput.actions["Move"];
+    }
+    private void OnEnable()
+    {
+        jumpAction.Enable();
+        moveAction.Enable();
+    }
+    private void OnDisable()
+    {
+        jumpAction.Disable();
+        moveAction.Disable();
+    }
+    private void Update()
+    {
+        Debug.Log(jumpAction.ReadValue<float>());
+        Debug.Log(moveAction.ReadValue<Vector3>());
+        transform.position += moveAction.ReadValue<Vector3>();
+    }
+```
+
 ### Util:
 
 ```c#
