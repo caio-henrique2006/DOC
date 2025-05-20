@@ -62,6 +62,44 @@ Lembre-se que o **input debugger** é necessário para testar com o mouse o sist
     }
 ```
 
+### Touch Example:
+
+```c#
+    private PlayerInput playerInput;
+    private InputAction position;
+    private InputAction touch;
+    private float last_touch_state;
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        position = playerInput.actions["position"];
+        touch = playerInput.actions["touch"];
+    }
+
+    private void OnEnable()
+    {
+        position.Enable();
+        touch.Enable();
+    }
+
+    private void OnDisable()
+    {
+        position.Disable();
+        touch.Disable();
+    }
+
+    private void Update()
+    {
+        float touch_state = touch.ReadValue<float>();
+        if (touch_state != last_touch_state) {
+            Debug.Log(position.ReadValue<UnityEngine.Vector2>());
+        }
+        last_touch_state = touch_state;
+    }
+```
+
+### Swipe Example:
+
 ### Util:
 
 ```c#
