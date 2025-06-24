@@ -7,3 +7,5 @@ interface Livro {
 let chave: keyof Livro;
 
 chave = "preco";
+
+console.log(chave);
