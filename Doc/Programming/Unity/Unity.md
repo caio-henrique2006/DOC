@@ -1,3 +1,17 @@
+# Conceitos:
+
+## Materials:
+
+É um recurso que define como a superfície de um objeto 3D será renderizado. NO Unity ele é aplicado ao Mesh renderer.
+
+### PBRMaps:
+
+São texturas específicas implementadas em materiais PBR (Physically Based Rendering) que controlam a aparência física de um objeto, tentando renderizar visualmente um material com realismo físico.
+
+## Shaders:
+
+São programas que rodam na GPU e determinam como os pixels, vértices ou objetos serão desenhados na tela.
+
 # Shortcuts:
 
 - Ctrl + Shift + f // Move Gameobject para a posição da câmera
